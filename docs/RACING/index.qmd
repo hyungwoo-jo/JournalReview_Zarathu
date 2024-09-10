@@ -1,11 +1,6 @@
 ---
-title: "Lower-intensity Statin + Ezetimibe or Statin monotherapy in ASCVD"
-title-slide-attributes:
-    data-background-image: "RACING Background image.jpg"
-    data-background-size: contain
-    data-background-opacity: "0.1"
-subtitle: "Lipid lowering: Time for Change?"
-author: "Christopher Shin"
+title: "<span style='color:red;'>Moderate-intensity statin + <br> Ezetimibe <br> <span class='small-vs'>vs</span> <br> High-intensity statin</span>"
+subtitle: "_Randomised, open-label, non-inferiority trial<br> in ASCVD patients_" 
 format: 
   revealjs:
     slide-number: true
@@ -16,18 +11,31 @@ format:
     scrollable: true
 editor: visual
 ---
+# Introduction
 
-## Glossary_1
+## Statin
+<img src="statin_mechanism.png"/>
 
--   **Atherosclerotic cardiovascular disease(ASCVD)** : 동맥경화성 심혈관질환; 죽상동맥경화로 인해 발생한 심혈관 질환군으로, 대개 이상지질혈증이 원인임. 관상동맥질환, 뇌혈관질환, 말초혈관질환, 대동맥류, 장허혈 등이 포함됨.<br><br>
+## Statin
+<img src="statin_side.png"/>
 
-## Glossary_2
+## Ezetimibe
+<img src="ezetimibe_mechanism.jpg"/>
 
--   **Low-density lipoprotein cholesterol(LDL-C)** : 간에서 조직 말단, 혈관으로 운반되는 콜레스테롤. <br><br>
--   **Statin** : 스타틴; 간 내 콜레스테롤 합성을 억제하여 혈중 LDL-C 농도를 낮추는 약. <br><br>
--   **Ezetimibe** : 에제티미브; 소장의 콜레스트롤 흡수를 억제하여 혈중 LDL-C 농도를 낮추는 약.
 
-## Background_1
+# Related previous studies
+
+## IMPROVE-IT trial
+### Interventions:
+-Treatment Group: Ezetimibe 10 mg + Simvastatin 40 mg (combination therapy).
+
+-Control Group: Simvastatin 40 mg (statin monotherapy)
+
+## Takeaways
+- LDL-C Hypothesis
+
+- Ezetimibe's Role: when added to statin, provides additional cardiovascular benefit
+
 
 -   **ASCVD** 환자는 **심혈관질환 고위험군**으로, **LDL-C 감소**가 예후를 크게 개선시킨다. <br><br>
 -   국제지침은 LDL-C를 감소시키기 위해 **고강도 statin 치료**를 우선 권고하지만, **많은 부작용** 때문에 환자의 복약 순응도가 떨어진다. <br><br>
