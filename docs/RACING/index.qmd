@@ -12,207 +12,190 @@ format:
 editor: visual
 ---
 
-# Introduction
+# [Introduction]{style="color:navy;"}
 
-## Statin
+## [Statin]{style="color:#FF6666;"}
 
 <img src="statin_mechanism.png"/>
 
-## Statin
+## [Statin]{style="color:#FF6666;"}
 
 <img src="statin_side.png"/>
 
-## Ezetimibe
+## [Ezetimibe]{style="color:#FF6666;"}
 
 <img src="ezetimibe_mechanism.jpg"/>
 
-# Related previous studies
+## [LDL-C]{style="color:#FF6666;"}
 
-## IMPROVE-IT trial
+<img src="ldl.jpg"/>
 
-### Interventions:
+# [Previous Studies]{style="color:navy;"}
 
--   Combination Therapy Group: Ezetimibe 10 mg + Simvastatin 40 mg
--   Monotherapy Group: Simvastatin 40 mg
-
-## Takeaways
-
--   LDL-C Hypothesis
--   Ezetimibe's Role: when added to statin, provides additional cardiovascular benefit
-
-## HIJ-PROPER Trial
+## [IMPROVE-IT trial]{style="color:#FF6666;"}
 
 ### Interventions:
 
--   Combination Therapy Group: Pravastatin (10–20 mg) + Ezetimibe (10 mg).
--   Monotherapy Group: Pravastatin (10–20 mg) alone.
+<br>
 
-## Takeaways
+#### Combination Therapy Group:
 
--The combination of pravastatin and ezetimibe resulted in a more pronounced reduction -No Significant Difference in Cardiovascular Outcomes
+-   Ezetimibe 10 mg + Simvastatin 40 mg
 
-# Methods
+#### Monotherapy Group:
 
-## Study design
+-   Simvastatin 40 mg
+
+## [Takeaways]{style="color:#FF6666;"}
+
+<br> - LDL-C Hypothesis<br><br> - Ezetimibe's Role: when added to statin, provides additional cardiovascular benefit
+
+## [HIJ-PROPER trial]{style="color:#FF6666;"}
+
+### Interventions:
+
+<br>
+
+#### Combination Therapy Group:
+
+-   Pravastatin (10–20 mg) + Ezetimibe (10 mg)
+
+#### Monotherapy Group:
+
+-   Pravastatin (10–20 mg) alone.
+
+## [Takeaways]{style="color:#FF6666;"}
+
+<br> - The combination of pravastatin and ezetimibe resulted in a more pronounced reduction <br><br> - No Significant Difference in Cardiovascular Outcomes
+
+# [Methods]{style="color:navy;"}
+
+## [Study design]{style="color:#FF6666;"}
 
 -   Multicenter
--   Randomized
+-   Randomized(stratified by LDL<100, DM)
 -   Open-label
 -   Noninferiority trial
 
-## Procedure
+## [Procedure]{style="color:#FF6666;"}
 
--   Randomly assigned
--   Combination Therapy Group: Rosuvastatin 10 mg + Ezetimibe 10 mg
--   Monotherapy Group: Rosuvastatin 20 mg
+<br>
 
-## Endpoint
+#### Combination Therapy Group:
 
--   Primary Endpoint: Cardiovascular death, Major cardiovascular event, non-fatal stroke\
+-   Rosuvastatin 10 mg + Ezetimibe 10 mg
 
-### Secondary Endpoint:
+#### Monotherapy Group:
 
-## Secondary Endpoint
+-   Rosuvastatin 20 mg
 
--   **효능**: **1, 2, 3년째 목표 도달율 (LDL-C \< 70mg/dL)**; All-cause Death + Major cardiovascular event + Non-fatal stroke <br><br>
--   **안전성**: 불내성으로 인한 감량 혹은 중단, 이상 사례 (당뇨, 근병증, 출혈 등)
+## [Primary endpoint]{style="color:#FF6666;"}
+-   Cardiovascular death
+-   Major cardiovascular event
+-   Non-fatal stroke
 
-## Follow up
+## [Secondary endpoint]{style="color:#FF6666;"}
 
--   2개월, 6개월; 이후 매년, **총 3년** <br><br>
--   지질 상태는 1, 2, 3년에 관찰함.
+### Clinical efficacy
 
-## Sample Size
+-   LDL-C \< 70 mg/dL(post-hoc: 55mg/dL)
+-   Composite of all-cause death, major CV event, non-fatal stroke
 
--   각 군 3년 primary endpoint 누적 발생률을 13%, 14%로 가정함.
--   Noninferiority margin 2.0%
--   검정력 80%
--   단측검정 1종 오류 확률 5.0%
--   탈락율 15%
--   **최종 3780명, 각 군 1890명**
+### Safety
 
-## Statistical analysis_1
+-   Discontinuation, dose reduction caused by intolerance
+-   Clinical adverse events
 
--   **Primary objective**: noninferiority, Primary endpoint
--   **Secondary objective**: superiority, LDL-C \< 70mg/dL <br><br>
--   범주형 변수 -\> N(%); Chi-square test OR Fisher's exact test
--   연속변수 -\> Mean ± SD OR Median(IQR); T-test OR Mann-Whitney U test
--   Primary endpoint -\> Log rank test, Cox proportional-hazards regression
--   Noninferiority는 두 군 primary endpoint 누적발생률 차이의 단측 95.0% CI 상한 \< 2.0% 일 때 입증
+# [Statistical anaylsis]{style="color:navy;"}
 
-## Statistical analysis_2
+## [Superior and Non-inferior]{style="color:#FF6666;"}
+<img src="superior.png"/>
+<img src="noninferior.png"/>
 
--   **Intention-to-treat (ITT)** <br><br>
--   Per-protocol 집단에 대해 민감도 분석 시행함. <br><br>
--   Endpoint 결측치는 제거함.
+## [Primary objective]{style="color:#FF6666;"}
 
-## Study design
+### Combination therapy's noninferiority <br>on primary endpoint
 
-::: panel-tabset
-### Figure
+-   Expected 3YR event rate: 13%, 14% for combination, monotherapy group with **2.0%** non-inferiority margin
+-   Lower target that IMPROVE-IT trial(more potent statin)
+-   2.0 margin was based on previous meta-analysis with <br> 7.2% relative risk difference(38% of 19%) between <br> moderate vs high statin therapy
 
-<img src="RACING Study design.jpg"/>
-:::
+## [Secondary objective]{style="color:#FF6666;"}
 
-# Results
+### Combination therapy's superiority<br>on secondary endpoint
 
-## Baseline characteristic
+-   Expected 3YR event rate: 70%, 50% for LDL-C \< 70mg/dL
+-   80% power, 5% one-sided alpha, 15% dropout rate<br>-\>220 patients required 
 
--   2017/02/14 \~ 2018/12/18
--   두 군의 **Baseline characteristic은 유의미한 차이가 없었다.** <br><br>
--   평균 나이 64세, 남성 75%, 한국인
--   심근경색 과거력 40%, PCI 과거력 66%, 당뇨 37%
--   고강도 statin 38%, 중간 강도 statin 36%, 중간 강도 statin + ezetimibe 13%
+## [Statistical analysis]{style="color:#FF6666;"}
 
-## Flow diagram, Baseline
+-   Categorical data: numbers(percentages)
+-   Continuous data: mean (SD) or median (IQR)
+-   Time-to-event data: Kaplan-Meier method
+-   Event rate between two groups: Log-rank test(mean)
+-   Hazard ratio: Cox regression analysis(mean)
 
-::: panel-tabset
-### Figure 1
+## [Statistical analysis]{style="color:#FF6666;"}
 
-<img src="RACING Figure 1.png"/>
+-   Primary endpoint: UNL of one-sided 95% CI non-inferiority(97.5% post-hoc)<br><br>
+-   Secondary endpoint of clinical efficacy: compared by means of log-rank tests
 
-### Table 1
+## [Trial profile]{style="color:#FF6666;"}
 
-<img src="RACING Table 1.png"/>
-:::
+<img src="trialprofile.png"/>
 
-## Primary Endpoint
+## [Statistical analysis]{style="color:#FF6666;"}
 
--   **병용요법 군, 단독요법 군의 Primary outcome 누적발생률이 각각 9.1%, 9.9%**로 나타남.<br> -0.78%pp; 90% CI -2.39 to 0.83 <br><br>
--   두 군의 1, 2, 3년째 용법 유지율은 95% vs 94%, 94% vs 91%, 93% vs 90% <br><br>
--   두 군의 심근경색 발생율이 매우 낮았음
+-   Primary analysis: **ITT population**
+-   Sensitivity analysis: **per-protocol population** after excluding patients who were not given allocated therapy
+-   Safety outcome assessment
+-   Subgroup analysis: age, sex, BMI, HT, DM, CKD, prior MI, stroke, PAD, baseline LDL-C\<100
 
-## Clinical endpoint
+# [Results]{style="color:navy;"}
 
-::: panel-tabset
-### Table 2
+## [Baseline characteristic]{style="color:#FF6666;"}
 
-<img src="RACING Table 2.png"/>
+<img src="baseline.png"/>
 
-### Figure 2
+## [Follow up]{style="color:#FF6666;"}
 
-<img src="RACING Figure 2.jpg"/>
-:::
+-   Combination therapy group: 95%, 94%, 93% at 1, 2, 3 years
+-   Monotherapy group: 94%, 91%, 90% at 1, 2, 3 years
+-   Other CV events were not significantly different
 
-## Secondary Endpoint_Efficacy
-
--   두 군의 1, 2, 3년째 LDL-C 목표 도달율은 각각 **73%** vs 55%, **75%** vs 60%, **72%** vs 58% (all p-value \< 0.0001)<br><br>
--   사후 검정 결과 두 군의 1, 2, 3년째 LDL-C \< 50mg/dL 도달율은 최대 **45%** vs 29% <br><br>
--   두 군의 LDL-C 중위값은 **58(48-71)mg/dL** vs 66(56-80)mg/dL (p-value \< 0.0001)
-
-## LDL \< 70mg/dL
+## [Primary endpoint(ITT)]{style="color:#FF6666;"}
 
 ::: panel-tabset
-### Table 3
+### 3-year clinical endpoint
 
-<img src="RACING Table 3.png"/>
+<img src="3yrendpoint.png"/>
+
+### Primary endpoint
+
+<img src="primaryendpoint.png"/>
 :::
 
-## Secondary Endpoint_Safety
+## [Secondary endpoint: Clinical efficacy]{style="color:#FF6666;"}
 
--   두 군의 감량/중단은 4.8% vs 8.2% (p \< 0.0001)<br><br>
+<img src="secondaryendpoint.png"/> - With all p\<0.0001 - Post-hoc analysis(LDL-C \< 50mg/dL): 42,45,42% vs 25,29,25%
 
-## Subgroup analysis
+## [Secondary: Endpoint_Safety]{style="color:#FF6666;"}
 
--   Subgroup 분석에서도 결과 경향성 유지됨
--   Per protocol 분석도 마찬가지
+<img src="secondaryendpoint2.png"/>
 
-## Safety Endpoint, Subgroup analysis
+## [Other analysis]{style="color:#FF6666;"}
 
-::: panel-tabset
-### Table 4
+-   Consistent result in subgroup analysis
+-   Consistent result in per-protocol population <img src="subgroupanalysis.png"/>
 
-<img src="RACING Table 4.png"/>
+## [Discussion]{style="color:#FF6666;"}
 
-### Figure 3
+-   **Combination therapy** was non-inferior to monotherapy in terms of primary endpoint
+-   **Combination therapy** led to better LDL control and less discontinuation
+-   **Combination therapy** is expected to reduce adverse effect(statin does-dependant)
+-   **Combination therapy** could resolve the problem with up-titration statin monotherapy
 
-<img src="RACING Figure 3.png"/>
-:::
+## [Limits]{style="color:#FF6666;"}
 
-## Conclusion
-
--   **RACING trial은 3년의 관찰 결과, ASCVD 환자를 대상으로 중간 강도 statin과 ezetimibe의 병용요법이 고강도 statin 단독요법에 비해 임상적으로 열등하지 않으며, LDL-C 목표치 달성 및 복약 유지 면에서는 더 우월할 수 있음을 보였다.**
-
-## Discussion_1
-
--   Superiority trial로 설계하기에는 환자 수가 부족했다. <br><br>
--   본 연구 결과는 환자가 중간 강도 statin에서 증량이 어려울 때 ezetimibe을 병용하는 전략뿐 아니라, **고강도 statin으로 증량하지 않고 바로 ezetimibe을 병용하는 전략이 고려되어야함을 시사한다.** <br><br>
--   고령, 여성, 비만, 당뇨, 갑상선저하증, 간부전, 신부전 환자들이 특히 statin 내약성이 떨어진다.
-
-## Discussion_2
-
--   고강도 statin이 중간 강도 statin에 비해 치료 성적이 우월함에도 불구하고, 병용요법이 단독요법에 비해 열등하지 않았던 결과는 아래 2가지로 설명 가능하다. <br><br>
--   첫째, 지질강하제의 종류와 무관하게 **LDL-C이 혈관질환 발생의 가장 중요한 예측인자**이기 때문에, LDL-C를 더 많이 낮춘 병용요법의 효과가 좋았다. <br><br>
--   둘째, **ezetimibe의 지질강화 외 효과들**이 이점으로 작용했을 수 있다. (ex. 유전자 조절, 백혈구 분화 조절 등)
-
-## Limits
-
--   의사가 스타틴 용법을 안 채로 치료를 시행했다 **(open-label)**.<br><br>
--   **Primary endpoint 누적발생률이 예상보다 낮아** (13\~14% vs 9.1\~9.9%) 연구가 **underpowered** 됐을 가능성이 있다. <br><br>
--   **Primary endpoint 누적발생률이 낮아** 비교가 어려울 수 있다.
-
-## Editorial
-
--   Open-label로 진행되었기 때문에 **nocebo 효과에 (환자가 치료를 해롭다고 믿어 치료 효과가 약해지는 현상) 취약하다.** 실제로 혈중 근육효소 수치에는 (객관적) 유의미한 차이가 없었으나, 근육통 호소는 (주관적) 유의미한 차이가 있었다. <br><br>
--   따라서 병용요법 군의 좋은 복약 순응도가 단독요법의 실제 부작용이 크기 때문이라고 보기 어려울 수 있지만, 그럼에도 **본 연구는 실제 진료 현장에서 벌어지는 현상을 잘 반영하고 있다.** <br><br>
--   2003년 고혈압의 표준 치료가 단독요법에서 병용요법으로 전환된 것처럼, 이제는 지질강하제 역시 병용요법이 표준치료가 되어야 할지도 모른다.
+-   Lower than anticipated event rates(13% vs 9%) allowed margin generous CI
+-   Comparison of individual clinical outcomes might be difficult due to small number of events
