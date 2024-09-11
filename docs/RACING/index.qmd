@@ -11,79 +11,66 @@ format:
     scrollable: true
 editor: visual
 ---
+
 # Introduction
 
 ## Statin
+
 <img src="statin_mechanism.png"/>
 
 ## Statin
+
 <img src="statin_side.png"/>
 
 ## Ezetimibe
-<img src="ezetimibe_mechanism.jpg"/>
 
+<img src="ezetimibe_mechanism.jpg"/>
 
 # Related previous studies
 
 ## IMPROVE-IT trial
-### Interventions:
--Combination Therapy Group: Ezetimibe 10 mg + Simvastatin 40 mg (combination therapy).
 
--Monotherapy Group: Simvastatin 40 mg (statin monotherapy)
+### Interventions:
+
+-   Combination Therapy Group: Ezetimibe 10 mg + Simvastatin 40 mg
+-   Monotherapy Group: Simvastatin 40 mg
 
 ## Takeaways
-- LDL-C Hypothesis
 
-- Ezetimibe's Role: when added to statin, provides additional cardiovascular benefit
+-   LDL-C Hypothesis
+-   Ezetimibe's Role: when added to statin, provides additional cardiovascular benefit
 
 ## HIJ-PROPER Trial
-### Interventions:
--Combination Therapy Group: Patients received pravastatin (10–20 mg) + ezetimibe (10 mg).
 
--Monotherapy Group: Patients received pravastatin (10–20 mg) alone.
+### Interventions:
+
+-   Combination Therapy Group: Pravastatin (10–20 mg) + Ezetimibe (10 mg).
+-   Monotherapy Group: Pravastatin (10–20 mg) alone.
 
 ## Takeaways
--No Significant Difference in Cardiovascular Outcomes
 
+-The combination of pravastatin and ezetimibe resulted in a more pronounced reduction -No Significant Difference in Cardiovascular Outcomes
 
-## Background_2
-
--   최근 중간 강도 statin과 ezetimibe의 병용요법을 고강도 statin 단독요법과 비교한 연구들이 있었으나,<br><br>
--   **환자수가 적고 (최대 891명), 추적관찰 기간이 짧았으며 (최장 24주) 임상 결과가 아닌 LDL-C 농도와 같은 표지자를 평가했다.** <br><br>
--   즉, 아직**두 치료법의 장기적인 효과를 비교한 대규모 RCT가 없는 실정이다.**<br><br>
--   따라서 저자들은 **효능과 안전성**의 측면에서, **중간 강도 statin과 ezetimibe의 병용 요법이 고강도 스타틴 단독요법에 비하여 열등하지 않음**을 검증하기 위해 **RACING** trial을 시행하였다.
-
-# Method
+# Methods
 
 ## Study design
 
--   Investigator-initiated, Prospective, Multicenter, Randomized, Open-label, Noninferiority trial <br><br>
--   한국의 26개 기관에서 시행
+-   Multicenter
+-   Randomized
+-   Open-label
+-   Noninferiority trial
 
-## Patients
+## Procedure
 
--   **선정기준**: ASCVD을 진단받은 19\~80세 환자들 <br><br>
--   **ASCVD**는 다음 질환들을 포함함; 과거 심근경색, 급성 관상동맥 증후군, 재혈관화, 허혈성 뇌졸중, 말초동맥질환 <br><br>
--   **제외기준**: 간 질환, 이식 환자, 약제 과민성, 기대여명 3년 이내 등
+-   Randomly assigned
+-   Combination Therapy Group: Rosuvastatin 10 mg + Ezetimibe 10 mg
+-   Monotherapy Group: Rosuvastatin 20 mg
 
-## Randomization and Procedures
+## Endpoint
 
-::: panel-tabset
-### Random
+-   Primary Endpoint: Cardiovascular death, Major cardiovascular event, non-fatal stroke\
 
--   병용요법, 단독요법 군에 **1:1 랜덤 배정**함. <br><br>
--   LDL-C 초기 농도, 당뇨 유무에 따라 층화함.
-
-### Regimen
-
--   **병용요법**: Rosuvastatin 10mg + Ezetimibe 10mg 1일 1회 <br><br>
--   **단독요법**: Rosuvastatin 20mg 1일 1회 <br><br>
--   유지용량: 초기용량을 가능한 그대로 유지하도록 함.
-:::
-
-## Primary Endpoint
-
--   **Cardiovascular Death** (심혈관질환 사망) + **Major cardiovascular event** (주요 심혈관질환 ) + **Non-fatal stroke** (비치사성 뇌졸중)
+### Secondary Endpoint:
 
 ## Secondary Endpoint
 
