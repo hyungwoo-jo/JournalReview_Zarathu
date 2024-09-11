@@ -27,20 +27,24 @@ editor: visual
 
 ## IMPROVE-IT trial
 ### Interventions:
--Treatment Group: Ezetimibe 10 mg + Simvastatin 40 mg (combination therapy).
+-Combination Therapy Group: Ezetimibe 10 mg + Simvastatin 40 mg (combination therapy).
 
--Control Group: Simvastatin 40 mg (statin monotherapy)
+-Monotherapy Group: Simvastatin 40 mg (statin monotherapy)
 
 ## Takeaways
 - LDL-C Hypothesis
 
 - Ezetimibe's Role: when added to statin, provides additional cardiovascular benefit
 
+## HIJ-PROPER Trial
+### Interventions:
+-Combination Therapy Group: Patients received pravastatin (10–20 mg) + ezetimibe (10 mg).
 
--   **ASCVD** 환자는 **심혈관질환 고위험군**으로, **LDL-C 감소**가 예후를 크게 개선시킨다. <br><br>
--   국제지침은 LDL-C를 감소시키기 위해 **고강도 statin 치료**를 우선 권고하지만, **많은 부작용** 때문에 환자의 복약 순응도가 떨어진다. <br><br>
--   이에 statin 외 지질강하제인 Ezetimibe의 대규모 RCT가 진행되었지만, **동일 용량 statin**에서 **ezemtimibe의 부가적인 효과**를 검증할 뿐이었다.<br><br>
--   해당 결과를 반영하여, 국제지침은 **statin의 최대 용량에 도달하고 나서야 ezetimibe의 병용을 권고한다.**<br><br>
+-Monotherapy Group: Patients received pravastatin (10–20 mg) alone.
+
+## Takeaways
+-No Significant Difference in Cardiovascular Outcomes
+
 
 ## Background_2
 
