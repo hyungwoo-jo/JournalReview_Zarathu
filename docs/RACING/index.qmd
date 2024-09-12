@@ -66,14 +66,15 @@ editor: visual
 
 ## [Takeaways]{style="color:#FF6666;"}
 
-<br> - The combination of pravastatin and ezetimibe resulted in a more pronounced reduction <br><br> - No Significant Difference in Cardiovascular Outcomes
+- No Significant Difference in Cardiovascular Outcomes
+- Different LDL-C target
 
 # [Methods]{style="color:navy;"}
 
 ## [Study design]{style="color:#FF6666;"}
 
 -   Multicenter
--   Randomized(stratified by LDL<100, DM)
+-   Randomized(stratified by LDL\<100, DM)
 -   Open-label
 -   Noninferiority trial
 
@@ -90,6 +91,7 @@ editor: visual
 -   Rosuvastatin 20 mg
 
 ## [Primary endpoint]{style="color:#FF6666;"}
+
 -   Cardiovascular death
 -   Major cardiovascular event
 -   Non-fatal stroke
@@ -109,8 +111,8 @@ editor: visual
 # [Statistical anaylsis]{style="color:navy;"}
 
 ## [Superior and Non-inferior]{style="color:#FF6666;"}
-<img src="superior.png"/>
-<img src="noninferior.png"/>
+
+<img src="superior.png"/> <img src="noninferior.png"/>
 
 ## [Primary objective]{style="color:#FF6666;"}
 
@@ -125,7 +127,7 @@ editor: visual
 ### Combination therapy's superiority<br>on secondary endpoint
 
 -   Expected 3YR event rate: 70%, 50% for LDL-C \< 70mg/dL
--   80% power, 5% one-sided alpha, 15% dropout rate<br>-\>220 patients required 
+-   80% power, 5% one-sided alpha, 15% dropout rate<br>-\>220 patients required
 
 ## [Statistical analysis]{style="color:#FF6666;"}
 
