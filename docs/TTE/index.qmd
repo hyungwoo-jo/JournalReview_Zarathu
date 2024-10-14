@@ -1,0 +1,41 @@
+---
+title: " <span style='color:red;'>Target Trial Emulation</span>"
+subtitle: "_Reflection on modern methods_" 
+format: 
+  revealjs:
+    slide-number: true
+    transition: slide
+    theme: simple
+    footer: Target Trial Emulation
+    reference-location: document
+    scrollable: true
+editor: visual
+---
+
+# [Introduction]{style="color:navy;"}
+
+## [Limitation of RCT]{style="color:#FF6666;"}
+
+<br> - Trial 인구가 실제 환자군의 다양성 반영 힘든 경우가 존재 <br>
+<br> - 고령, 동반 질환이 있는 환자 대상 RCT는 따라서 드물다 <br>
+<br> - Ex)  영국에서 NSCLC 진단 평균 연령 73.5세지만, <br> RCT 에서 절반 이상이 60세 미만에서 진단 
+
+## [Limitation of observation data]{style="color:#FF6666;"}
+
+<br> - Random이 아니기 때문에 교란 변수가 존재함 <br>
+<br> - 치료그룹 간 환자의 특성이 다름 <br>
+
+## [Limitation of observation data]{style="color:#FF6666;"}
+
+<br> - Immortal-time bias <br>
+<br> - 더 오래 생존할 수록 치료 받는다 <br>
+<br> - Ex) 수술 받은 환자는 예정된 수술 날짜까지 생존한 환자 <br>
+<br> - 수술의 효과가 부풀려짐 <br>
+
+# [Target Trial Emulation]{style="color:navy;"}
+
+## [TTE: Method]{style="color:#FF6666;"}
+
+<br> - Trial 인구가 실제 환자군의 다양성 반영 힘든 경우가 존재 <br>
+<br> - 고령, 동반 질환이 있는 환자 대상 RCT는 따라서 드물다 <br>
+<br> - Ex)  영국에서 NSCLC 진단 평균 연령 73.5세지만, <br> RCT 에서 절반 이상이 60세 미만에서 진단 
