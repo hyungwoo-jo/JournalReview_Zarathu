@@ -8,7 +8,7 @@
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.555">
+  <meta name="generator" content="quarto-1.5.57">
 
   <title>Target Trial Emulation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -320,6 +320,13 @@
       margin-right: 0; 
     }
   </style>
+  <link href="index_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+  <script src="index_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  <script src="index_files/libs/viz-1.8.2/viz.js"></script>
+  <link href="index_files/libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+  <script src="index_files/libs/grViz-binding-1.0.11/grViz.js"></script>
+  <link href="index_files/libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+  <script src="index_files/libs/tabwid-1.1.3/tabwid.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -338,19 +345,331 @@
 <h1><span style="color:navy;">Introduction</span></h1>
 
 </section>
-<section id="limitation-of-rct" class="slide level2">
-<h2><span style="color:#FF6666;">Limitation of RCT</span></h2>
-<p><br> - Trial 인구가 실제 환자군의 다양성 반영 힘든 경우가 존재 <br> <br> - 고령, 동반 질환이 있는 환자 대상 RCT는 따라서 드물다 <br> <br> - Ex) 영국에서 NSCLC 진단 평균 연령 73.5세지만, RCT 에서 절반 이상이 60세 미만에서 진단 <br></p>
+<section id="what-we-want" class="slide level2">
+<h2><span style="color:#FF6666;">What we want</span></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-bc34c6afd6e26f950f1d" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-bc34c6afd6e26f950f1d">{"x":{"diagram":"\n  digraph {\n    rankdir=LR\n    node [shape = plaintext, fontcolor=navy, fontname=\"Arial\"]\n    edge [color=red, penwidth=0.5]\n    A -> Y\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 </section>
-<section id="statin" class="slide level2">
-<h2><span style="color:#FF6666;">Statin</span></h2>
+<section id="rct" class="slide level2">
+<h2><span style="color:#FF6666;">RCT</span></h2>
+<div>
+<ul>
+<li class="fragment">Ideal <strong>BUT</strong> not always</li>
+<li class="fragment"><em>Ethical</em></li>
+<li class="fragment"><em>Feasible</em></li>
+<li class="fragment"><em>Timely</em></li>
+</ul>
+</div>
+</section>
+<section id="rct-ethics" class="slide level2">
+<h2><span style="color:#FF6666;">RCT: Ethics</span></h2>
+<div>
+<ul>
+<li class="fragment">Absence of clinical equipose</li>
+<li class="fragment">SUPPORT trial controversy <img src="img/support.png"></li>
+</ul>
+</div>
+</section>
+<section id="rct-feasibility" class="slide level2">
+<h2><span style="color:#FF6666;">RCT: Feasibility</span></h2>
+<ul>
+<li>Median age at NSCLC diagnosis: 73.5yrs</li>
+<li>RCT: half under 60</li>
+<li>Rare disease?</li>
+</ul>
+</section>
+<section id="rct-feasibility-1" class="slide level2">
+<h2><span style="color:#FF6666;">RCT: Feasibility</span></h2>
+<div class="{.layout-ncol=&quot;2&quot;}">
+<p><img src="img/nsclc.png"> <img src="img/median.png"></p>
+</div>
+</section>
+<section id="rct-time" class="slide level2">
+<h2><span style="color:#FF6666;">RCT: Time</span></h2>
+<div class="column" style="width:100%;">
+<p><img src="img/aa.png" style="display: block; margin: auto; width: 80%; margin-top: 10px;"> <br> - <em>Later confirmed by randomized trial</em></p>
+</div></section>
+<section id="real-world-data" class="slide level2">
+<h2><span style="color:#FF6666;">Real World Data</span></h2>
+<ul>
+<li>Need for observational Studies…</li>
+<li><em><strong>BUT</strong></em></li>
+</ul>
+</section>
+<section id="rwd-confounding" class="slide level2">
+<h2><span style="color:#FF6666;">RWD: Confounding</span></h2>
 
-<img src="statin_side.png" class="r-stretch"><div class="quarto-auto-generated-content">
+<img src="img/conf.png" class="r-stretch"></section>
+<section id="rwd-time-zero-problem" class="slide level2">
+<h2><span style="color:#FF6666;">RWD: Time zero problem</span></h2>
+<ul>
+<li>Eligibility is met(E)</li>
+<li>Time to start follow up(T0)</li>
+<li>Assignment (A)</li>
+</ul>
+</section>
+<section id="rwd-time-zero-problem-1" class="slide level2">
+<h2><span style="color:#FF6666;">RWD: Time zero problem</span></h2>
+<div>
+<ul>
+<li class="fragment">Example</li>
+<li class="fragment">E: Lung cancer Dx</li>
+<li class="fragment">T: Start of Follow-up</li>
+<li class="fragment">A: Surgery(Control) assignment</li>
+</ul>
+</div>
+</section>
+<section id="rwd-time-zero-problem-2" class="slide level2">
+<h2><span style="color:#FF6666;">RWD: Time zero problem</span></h2>
+<div class="column" style="width:100%;">
+<ul>
+<li><strong>RCT</strong></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></section>
+<section id="rwd-time-zero-problem-3" class="slide level2">
+<h2><span style="color:#FF6666;">RWD: Time zero problem</span></h2>
+<div class="column" style="width:100%;">
+<ul>
+<li><strong>Prevalent user bias</strong></li>
+<li>E: Cancer</li>
+<li>T0:Follow up</li>
+<li>A: Statin assign</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></section>
+<section id="rwd-time-zero-problem-4" class="slide level2">
+<h2><span style="color:#FF6666;">RWD: Time zero problem</span></h2>
+<div class="{.layout-ncol=&quot;2&quot;}">
+<ul>
+<li><strong>HR 0.85(0.82-0.87)</strong></li>
+</ul>
+<p><img data-src="img/nejmprev.png"> <img data-src="img/nejmdesign.png"></p>
+</div>
+</section>
+<section id="rct-1" class="slide level2">
+<h2><span style="color:#FF6666;">RCT</span></h2>
+<div class="{.layout-ncol=&quot;1&quot;}">
+<p>-<strong>HR 1.00(0.93-1.08)</strong></p>
+<p><img data-src="img/meta.png"></p>
+</div>
+</section>
+<section id="rwd-time-zero-problem-5" class="slide level2">
+<h2><span style="color:#FF6666;">RWD: Time zero problem</span></h2>
+<div class="column" style="width:100%;">
+<ul>
+<li><strong>Immortal time bias</strong></li>
+<li>E: Menopause</li>
+<li>T0: Start Follow-up</li>
+<li>A: HRT assignment</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></section>
+<section id="rwd-time-zero-problem-6" class="slide level2">
+<h2><span style="color:#FF6666;">RWD: Time zero problem</span></h2>
+<div class="{.layout-ncol=&quot;1&quot;}">
+<ul>
+<li><strong>RR 0.61 (0.52-0.71)</strong> <img src="img/hrt.png"></li>
+<li><em>“Women were asked about use and duration of hormone therapy after menopause.(Updated biennially)”</em></li>
+</ul>
+</div>
+</section>
+<section id="rct-2" class="slide level2">
+<h2><span style="color:#FF6666;">RCT</span></h2>
+<div class="{.layout-ncol=&quot;1&quot;}">
+<ul>
+<li><strong>HR 1.23 (0.99-1.53)</strong> <img src="img/hrtnejm.png"></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="target-trial-emulation" class="title-slide slide level1 center">
+<h1><span style="color:navy;">Target Trial Emulation</span></h1>
+
+</section>
+<section id="back-to-question" class="slide level2">
+<h2><span style="color:#FF6666;">Back to Question</span></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item" id="htmlwidget-774c13129cb138bbe091" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-774c13129cb138bbe091">{"x":{"diagram":"\n  digraph {\n    rankdir=LR\n    node [shape = plaintext, fontcolor=navy, fontname=\"Arial\"]\n    edge [color=red, penwidth=0.5]\n    A -> Y\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="how-about" class="slide level2">
+<h2><span style="color:#FF6666;">How about?</span></h2>
+<p><br> - Emulate RCT to avoid bias!</p>
+</section>
+<section id="key-components-of-protocol" class="slide level2">
+<h2><span style="color:#FF6666;">Key components of protocol</span></h2>
+<ul>
+<li>Eligibility criteria</li>
+<li>Start and End of F/U</li>
+<li>Treatment strategies</li>
+<li>Outcomes of interest</li>
+<li>Casual contrast</li>
+<li>Data Analysis plan</li>
+</ul>
+</section>
+<section id="tte-treatment-strategies" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Treatment strategies</span></h2>
+<div class="container">
+<p><img src="img/ideal.png" style="width:80%; display:block; margin: 0 auto;"></p>
+<div class="text-center">
+<ul>
+<li><strong>E:</strong> eGFR &lt; 30</li>
+<li><strong>Group A:</strong> eGFR 10-14</li>
+<li><strong>Group B:</strong> eGFR 5-7</li>
+<li><em>Before trial, observational studies investigating this causal question showed a strong survival advantage for late dialysis start</em></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="tte-treatment-strategies-1" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Treatment strategies</span></h2>
+<div>
+<ul>
+<li class="fragment">Lets consider Observational trial</li>
+<li class="fragment"><strong>Can we assign Individual to Unique strategies?</strong></li>
+<li class="fragment">Ex) Individual with <em>eGFR 16</em> at FU 1month</li>
+<li class="fragment">Strategy A or B?</li>
+</ul>
+</div>
+</section>
+<section id="tte-clonecensor-weight-method" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: CloneCensor Weight method</span></h2>
+<div>
+<ul>
+<li class="fragment">Why not All?</li>
+<li class="fragment">Double allocation: prevents bias of random assignment</li>
+<li class="fragment">Just Clone and censor <img src="img/ccw.png"></li>
+</ul>
+</div>
+</section>
+<section id="tte-clone-censor-weight-method" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Clone Censor Weight method</span></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-586a73a4{}.cl-58639868{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-58667b6e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-58669bc6{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669bd0{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669bd1{width:4.081in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669bda{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669bdb{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669be4{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669be5{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669be6{width:4.081in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669bee{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669bef{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669bf0{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669bf8{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669bf9{width:4.081in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669bfa{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669c02{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669c03{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669c04{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669c0c{width:4.081in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669c0d{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669c16{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669c17{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669c18{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669c19{width:4.081in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669c1a{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-58669c20{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-586a73a4"><thead><tr style="overflow-wrap:break-word;"><th class="cl-58669bc6"><p class="cl-58667b6e"><span class="cl-58639868">Specific Analysis</span></p></th><th class="cl-58669bd0"><p class="cl-58667b6e"><span class="cl-58639868">Correct Study Design</span></p></th><th class="cl-58669bd1"><p class="cl-58667b6e"><span class="cl-58639868">Biases Introduced</span></p></th><th class="cl-58669bda"><p class="cl-58667b6e"><span class="cl-58639868">Confounding Adjustment Necessary</span></p></th><th class="cl-58669bdb"><p class="cl-58667b6e"><span class="cl-58639868">Hazard Ratio (95% CI)</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-58669be4"><p class="cl-58667b6e"><span class="cl-58639868">Randomized IDEAL trial</span></p></td><td class="cl-58669be5"><p class="cl-58667b6e"><span class="cl-58639868">Yes</span></p></td><td class="cl-58669be6"><p class="cl-58667b6e"><span class="cl-58639868">—</span></p></td><td class="cl-58669bee"><p class="cl-58667b6e"><span class="cl-58639868">No</span></p></td><td class="cl-58669bef"><p class="cl-58667b6e"><span class="cl-58639868">1.04 (0.83 to 1.30)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-58669bf0"><p class="cl-58667b6e"><span class="cl-58639868">Target trial emulation analysis</span></p></td><td class="cl-58669bf8"><p class="cl-58667b6e"><span class="cl-58639868">Yes</span></p></td><td class="cl-58669bf9"><p class="cl-58667b6e"><span class="cl-58639868">—</span></p></td><td class="cl-58669bfa"><p class="cl-58667b6e"><span class="cl-58639868">Yes</span></p></td><td class="cl-58669c02"><p class="cl-58667b6e"><span class="cl-58639868">0.96 (0.94 to 0.99)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-58669c03"><p class="cl-58667b6e"><span class="cl-58639868">Common but biased analysis 1</span></p></td><td class="cl-58669c04"><p class="cl-58667b6e"><span class="cl-58639868">No</span></p></td><td class="cl-58669c0c"><p class="cl-58667b6e"><span class="cl-58639868">Selection bias (depletion of susceptibles), lead time bias</span></p></td><td class="cl-58669c0d"><p class="cl-58667b6e"><span class="cl-58639868">Yes</span></p></td><td class="cl-58669c16"><p class="cl-58667b6e"><span class="cl-58639868">1.58 (1.19 to 1.78)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-58669c17"><p class="cl-58667b6e"><span class="cl-58639868">Common but biased analysis 2</span></p></td><td class="cl-58669c18"><p class="cl-58667b6e"><span class="cl-58639868">No</span></p></td><td class="cl-58669c19"><p class="cl-58667b6e"><span class="cl-58639868">Immortal time bias</span></p></td><td class="cl-58669c1a"><p class="cl-58667b6e"><span class="cl-58639868">Yes</span></p></td><td class="cl-58669c20"><p class="cl-58667b6e"><span class="cl-58639868">1.46 (1.19 to 1.78)</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</section>
+<section id="tte-is-there-immediate-assignment" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Is there Immediate Assignment?</span></h2>
+<div>
+<ul>
+<li class="fragment">Do we recieve surgery at the moment diagnosed?</li>
+<li class="fragment">No</li>
+<li class="fragment">Grace period!</li>
+<li class="fragment"><em>Real world: investigators need to define grace period after time zero during which initiation is still considered to be immediate</em></li>
+</ul>
+</div>
+</section>
+<section id="tte-is-there-immediate-assignment-1" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Is there Immediate Assignment?</span></h2>
+<div>
+<ul>
+<li class="fragment">If 6 months: surgery at 1 month, 3month -&gt; Can be on Tx group!</li>
+<li class="fragment">Redefinition of intervention(Ex. Control vs Surgery in 6M)</li>
+<li class="fragment">Death before 6 month?</li>
+</ul>
+</div>
+</section>
+<section id="tte-clone-censor-weight-with-grace-period" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Clone censor weight with grace period</span></h2>
+
+<img src="img/lancethead.png" class="r-stretch"></section>
+<section id="tte-clone-censor-weight-with-grace-period-1" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Clone censor weight with grace period</span></h2>
+
+<img src="img/ccw.png" class="r-stretch"></section>
+<section id="tte-clone-censor-weight-with-grace-period-2" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Clone censor weight with grace period</span></h2>
+
+<img src="img/ccw2.png" class="r-stretch"></section>
+<section id="tte-clone-censor-weight-with-grace-period-3" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Clone censor weight with grace period</span></h2>
+
+<img src="img/ccw3.png" class="r-stretch"></section>
+<section id="tte-clone-censor-weight-with-grace-period-4" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Clone censor weight with grace period</span></h2>
+
+<img src="img/ccw4.png" class="r-stretch"></section>
+<section id="tte-time-zero-problem" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Time zero problem</span></h2>
+<ul>
+<li>Impossible to assign unique treatment to each individual</li>
+<li>Clone individual</li>
+<li>Double allocation: prevents bias of random assignment</li>
+</ul>
+</section>
+<section id="tte-time-zero-problem-1" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Time zero problem</span></h2>
+<ul>
+<li>Individuals included in analysis multiple times</li>
+<li>Bootstrap</li>
+</ul>
+</section>
+<section id="tte-time-zero-problem-2" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Time zero problem</span></h2>
+<ul>
+<li>Non-unique choice of time-zero</li>
+<li>Ex) HRT among postmenopausal women with no use of HRT for previous 2 years</li>
+<li>Solution?</li>
+</ul>
+</section>
+<section id="itt-is-it-possible" class="slide level2">
+<h2><span style="color:#FF6666;">ITT: is it possible?</span></h2>
+<ul>
+<li>Closest Analog: Comparison of initiation strategy</li>
+<li>If RCT?: All people not taking treatment at baseline-&gt;goes to same group</li>
+<li>If initiation occurs shorly after assignment to treatment-&gt; observation analogue roughly preserves key feature</li>
+</ul>
+</section>
+<section id="tte-time-zero-problem-3" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Time zero problem</span></h2>
+<ul>
+<li>First eligible time</li>
+<li>Randomly chose eligible time</li>
+<li>Every eligible time: Multiple sequential trial</li>
+</ul>
+</section></section>
+<section id="multiple-sequential-trial-emulation" class="title-slide slide level1 center">
+<h1><span style="color:navy;">Multiple Sequential Trial Emulation</span></h1>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Target Trial Emulation</p>
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
@@ -561,6 +880,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -593,18 +950,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -636,7 +982,29 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -644,7 +1012,7 @@
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

@@ -8,34 +8,351 @@ format:
     theme: simple
     footer: Target Trial Emulation
     reference-location: document
-    scrollable: true
+    scrollable: TRUE
 editor: visual
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(DiagrammeR)
+```
+
 # [Introduction]{style="color:navy;"}
 
-## [Limitation of RCT]{style="color:#FF6666;"}
+## [What we want]{style="color:#FF6666;"}
 
-<br> - Trial 인구가 실제 환자군의 다양성 반영 힘든 경우가 존재 <br>
-<br> - 고령, 동반 질환이 있는 환자 대상 RCT는 따라서 드물다 <br>
-<br> - Ex)  영국에서 NSCLC 진단 평균 연령 73.5세지만, <br> RCT 에서 절반 이상이 60세 미만에서 진단 
+```{r}
+library(DiagrammeR)
 
-## [Limitation of observation data]{style="color:#FF6666;"}
+grViz("
+  digraph {
+    rankdir=LR
+    node [shape = plaintext, fontcolor=navy, fontname=\"Arial\"]
+    edge [color=red, penwidth=0.5]
+    A -> Y
+  }
+")
+```
 
-<br> - Random이 아니기 때문에 교란 변수가 존재함 <br>
-<br> - 치료그룹 간 환자의 특성이 다름 <br>
+## [RCT]{style="color:#FF6666;"}
 
-## [Limitation of observation data]{style="color:#FF6666;"}
+::: {.incremental}
+- Ideal **BUT** not always
+- _Ethical_
+- _Feasible_
+- _Timely_
+:::
 
-<br> - Immortal-time bias <br>
-<br> - 더 오래 생존할 수록 치료 받는다 <br>
-<br> - Ex) 수술 받은 환자는 예정된 수술 날짜까지 생존한 환자 <br>
-<br> - 수술의 효과가 부풀려짐 <br>
+## [RCT: Ethics]{style="color:#FF6666;"}
+::: {.incremental}
+-   Absence of clinical equipose
+-   SUPPORT trial controversy
+<img src="img/support.png"/>
+:::
+
+## [RCT: Feasibility]{style="color:#FF6666;"}
+
+-   Median age at NSCLC diagnosis: 73.5yrs
+-   RCT: half under 60
+-   Rare disease?
+
+
+## [RCT: Feasibility]{style="color:#FF6666;"}
+::: {.layout-ncol="2"}
+<img src="img/nsclc.png"/>
+<img src="img/median.png"/>
+:::
+
+## [RCT: Time]{style="color:#FF6666;"}
+
+::: {.column width="100%"}
+<img src="img/aa.png" style="display: block; margin: auto; width: 80%; margin-top: 10px;"/>
+<br>
+- _Later confirmed by randomized trial_
+:::
+
+## [Real World Data]{style="color:#FF6666;"}
+-   Need for observational Studies...
+-   _**BUT**_
+
+## [RWD: Confounding]{style="color:#FF6666;"}
+<img src="img/conf.png"/>
+
+## [RWD: Time zero problem]{style="color:#FF6666;"}
+-   Eligibility is met(E)
+-   Time to start follow up(T0)
+-   Assignment (A)
+
+## [RWD: Time zero problem]{style="color:#FF6666;"}
+::: {.incremental}
+-   Example
+-   E: Lung cancer Dx
+-   T: Start of Follow-up
+-   A: Surgery(Control) assignment
+::: 
+
+## [RWD: Time zero problem]{style="color:#FF6666;"}
+
+::: {.column width="100%"}
+-   **RCT**
+```{r, echo=FALSE}
+library(ggplot2)
+library(grid)
+
+p <- ggplot() + 
+  geom_segment(aes(x = 0, y = 0.5, xend = 2.5, yend = 0.5), size = 1, color = "black") +
+  geom_rect(aes(xmin = 2.5, xmax = 3.5, ymin = 0.45, ymax = 0.55), color = "black", fill = 'gray', alpha = 0.5) +
+  annotate("text", x = 3, y = 0.60, label = "Washout period w/o\nstudy drug use", size = 3, hjust = 0.5) +
+  geom_point(aes(x = 3.5, y = 0.5), shape = 15, size = 3, color = "red") +
+  annotate("text", x = 3.5, y = 0.65, label = "A", color = "red", size = 5) +
+  annotate("text", x = 3.5, y = 0.70, label = "T", color = "blue", size = 5) +
+  annotate("text", x = 3.5, y = 0.75, label = "E", color = "black", size = 5) +
+  geom_segment(aes(x = 3.5, y = 0.5, xend = 4.8, yend = 0.8), size = 1, color = "red") +  
+  geom_segment(aes(x = 3.5, y = 0.5, xend = 4.8, yend = 0.2), size = 1, color = "red") + 
+  geom_segment(aes(x = 4.8, y = 0.8, xend = 11.8, yend = 0.8), size = 1, color = "red") +
+  geom_segment(aes(x = 4.8, y = 0.2, xend = 11.8, yend = 0.2), size = 1, color = "red") +
+  annotate("text", x = 4.9, y = 0.9, label = expression(A[1]), hjust = 0, size = 6, color = "black") +
+  annotate("text", x = 4.9, y = 0.1, label = expression(A[2]), hjust = 0, size = 6, color = "black") +
+  annotate("text", x = 0.9, y = 0.75, label = "Randomized trial", fontface = "bold", size = 5, color = 'purple') +
+  theme_void()
+p
+```
+::: 
+
+## [RWD: Time zero problem]{style="color:#FF6666;"}
+::: {.column width="100%"}
+-   **Prevalent user bias**
+-   E: Cancer
+-   T0:Follow up
+-   A: Statin assign
+```{r, echo=FALSE}
+library(ggplot2)
+library(grid)
+
+p <- ggplot() + 
+  geom_segment(aes(x = 0, y = 0.5, xend = 2.5, yend = 0.5), size = 1, color = "black") +
+  geom_rect(aes(xmin = 2.5, xmax = 3.5, ymin = 0.45, ymax = 0.55), color = "black", fill = 'gray', alpha = 0.5) +
+  annotate("text", x = 3, y = 0.60, label = "Washout period w/o\nstudy drug use", size = 3, hjust = 0.5) +
+  geom_point(aes(x = 3.5, y = 0.5), shape = 15, size = 3, color = "red") +
+  annotate("text", x = 3.5, y = 0.65, label = "A", color = "red", size = 5) +
+  annotate("text", x = 4.9, y = 0.85, label = "T0", color = "blue", size = 6) +
+  annotate("text", x = 3.5, y = 0.70, label = "E", color = "black", size = 5) +
+  geom_segment(aes(x = 3.5, y = 0.5, xend = 4.8, yend = 0.8), size = 1, color = "red") +  
+  geom_segment(aes(x = 3.5, y = 0.5, xend = 4.8, yend = 0.2), size = 1, color = "red") + 
+  geom_segment(aes(x = 4.8, y = 0.8, xend = 11.8, yend = 0.8), size = 1, color = "blue") +
+  geom_segment(aes(x = 4.8, y = 0.2, xend = 11.8, yend = 0.2), size = 1, color = "blue") +
+  annotate("text", x = 4.9, y = 0.9, label = expression(A[1]), hjust = 0, size = 6, color = "black") +
+  annotate("text", x = 4.9, y = 0.1, label = expression(A[2]), hjust = 0, size = 6, color = "black") +
+  annotate("text", x = 0.9, y = 0.75, label = "T0 after A", fontface = "bold", size = 5, color = 'purple') +
+  theme_void()
+p
+```
+::: 
+
+## [RWD: Time zero problem]{style="color:#FF6666;"}
+::: {.layout-ncol="2"}
+- **HR 0.85(0.82-0.87)**
+
+![](img/nejmprev.png)
+![](img/nejmdesign.png)
+:::
+
+## [RCT]{style="color:#FF6666;"}
+::: {.layout-ncol="1"}
+-**HR 1.00(0.93-1.08)**
+
+![](img/meta.png)
+:::
+
+
+## [RWD: Time zero problem]{style="color:#FF6666;"}
+::: {.column width="100%"}
+-   **Immortal time bias**
+-   E: Menopause
+-   T0: Start Follow-up
+-   A: HRT assignment
+```{r, echo=FALSE}
+library(ggplot2)
+library(grid)
+
+p <- ggplot() + 
+  geom_segment(aes(x = 0, y = 0.5, xend = 4.5, yend = 0.5), size = 1, color = "black") +
+  geom_rect(aes(xmin = 4.5, xmax = 5.5, ymin = 0.45, ymax = 0.55), color = "black", fill = 'gray', alpha = 0.5) +
+  annotate("text", x = 5, y = 0.60, label = "Washout period w/o\nstudy drug use", size = 3, hjust = 0.5) +
+  geom_point(aes(x = 3.5, y = 0.5), shape = 15, size = 3, color = "red") +
+  annotate("text", x = 3.5, y = 0.65, label = "T0", color = "blue", size = 5) +
+  annotate("text", x = 4.9, y = 0.85, label = "A", color = "red", size = 6) +
+  annotate("text", x = 3.5, y = 0.70, label = "E", color = "black", size = 5) +
+  geom_segment(aes(x = 3.5, y = 0.5, xend = 4.8, yend = 0.8), size = 1, color = "blue") +  
+  geom_segment(aes(x = 3.5, y = 0.5, xend = 4.8, yend = 0.2), size = 1, color = "blue") + 
+  geom_segment(aes(x = 4.8, y = 0.8, xend = 11.8, yend = 0.8), size = 1, color = "red") +
+  geom_segment(aes(x = 4.8, y = 0.2, xend = 11.8, yend = 0.2), size = 1, color = "red") +
+  annotate("text", x = 4.9, y = 0.9, label = expression(A[1]), hjust = 0, size = 6, color = "black") +
+  annotate("text", x = 4.9, y = 0.1, label = expression(A[2]), hjust = 0, size = 6, color = "black") +
+  annotate("text", x = 0.9, y = 0.75, label = "A after T0", fontface = "bold", size = 5, color = 'purple') +
+  theme_void()
+p
+```
+::: 
+
+## [RWD: Time zero problem]{style="color:#FF6666;"}
+::: {.layout-ncol="1"}
+-   **RR 0.61 (0.52-0.71)**
+<img src="img/hrt.png"/>
+-   _“Women were asked about use and duration of hormone therapy after menopause.(Updated biennially)”_
+:::
+
+## [RCT]{style="color:#FF6666;"}
+::: {.layout-ncol="1"}
+-   **HR 1.23 (0.99-1.53)**
+<img src="img/hrtnejm.png"/>
+:::
 
 # [Target Trial Emulation]{style="color:navy;"}
 
-## [TTE: Method]{style="color:#FF6666;"}
+## [Back to Question]{style="color:#FF6666;"}
 
-<br> - Trial 인구가 실제 환자군의 다양성 반영 힘든 경우가 존재 <br>
-<br> - 고령, 동반 질환이 있는 환자 대상 RCT는 따라서 드물다 <br>
-<br> - Ex)  영국에서 NSCLC 진단 평균 연령 73.5세지만, <br> RCT 에서 절반 이상이 60세 미만에서 진단 
+```{r}
+library(DiagrammeR)
+grViz("
+  digraph {
+    rankdir=LR
+    node [shape = plaintext, fontcolor=navy, fontname=\"Arial\"]
+    edge [color=red, penwidth=0.5]
+    A -> Y
+  }
+")
+```
+
+## [How about?]{style="color:#FF6666;"}
+<br>
+-   Emulate RCT to avoid bias!
+
+## [Key components of protocol]{style="color:#FF6666;"}
+-   Eligibility criteria
+-   Start and End of F/U
+-   Treatment strategies
+-   Outcomes of interest
+-   Casual contrast
+-   Data Analysis plan
+
+## [TTE: Treatment strategies]{style="color:#FF6666;"}
+::: {.container}
+
+<img src="img/ideal.png" style="width:80%; display:block; margin: 0 auto;"/>
+
+
+::: {.text-center}
+- **E:** eGFR < 30
+- **Group A:** eGFR 10-14
+- **Group B:** eGFR 5-7
+- *Before trial, observational studies investigating this causal question showed a strong survival advantage for late dialysis start*
+:::
+
+:::
+
+## [TTE: Treatment strategies]{style="color:#FF6666;"}
+::: {.incremental}
+-   Lets consider Observational trial
+-   **Can we assign Individual to Unique strategies?**
+-   Ex) Individual with _eGFR 16_ at FU 1month
+-   Strategy A or B?
+:::
+
+## [TTE: CloneCensor Weight method]{style="color:#FF6666;"}
+::: {.incremental}
+-   Why not All?
+-   Double allocation: prevents bias of random assignment
+-   Just Clone and censor
+<img src="img/ccw.png"/>
+:::
+
+
+## [TTE: Clone Censor Weight method]{style="color:#FF6666;"}
+```{r, echo=FALSE}
+library(flextable)
+data <- data.frame(
+  Specific_Analysis = c("Randomized IDEAL trial", "Target trial emulation analysis", 
+                        "Common but biased analysis 1", "Common but biased analysis 2"),
+  Correct_Study_Design = c("Yes", "Yes", "No", "No"),
+  Biases_Introduced = c("—", "—", "Selection bias (depletion of susceptibles), lead time bias", 
+                        "Immortal time bias"),
+  Confounding_Adjustment_Necessary = c("No", "Yes", "Yes", "Yes"),
+  Hazard_Ratio_CI = c("1.04 (0.83 to 1.30)", "0.96 (0.94 to 0.99)", 
+                      "1.58 (1.19 to 1.78)", "1.46 (1.19 to 1.78)")
+)
+colnames(data) <- gsub("_", " ", colnames(data))  # non-breaking space (alt+0160 on Windows)
+ft <- flextable(data) %>%
+  set_header_labels(`Specific Analysis` = "Specific Analysis",
+                    `Correct Study Design` = "Correct Study Design",
+                    `Biases Introduced` = "Biases Introduced",
+                    `Confounding Adjustment Necessary` = "Confounding Adjustment Necessary",
+                    `Hazard Ratio CI` = "Hazard Ratio (95% CI)") %>%
+  autofit()
+ft
+```
+## [TTE: Is there Immediate Assignment?]{style="color:#FF6666;"}
+::: {.incremental}
+-   Do we recieve surgery at the moment diagnosed?
+-   No
+-   Grace period!
+-   _Real world: investigators need to define grace period after time zero during which initiation is still considered to be immediate_
+:::
+
+## [TTE: Is there Immediate Assignment?]{style="color:#FF6666;"}
+::: {.incremental}
+-   If 6 months: surgery at 1 month, 3month <br> -\> Can be on Tx group!
+-   Redefinition of intervention(Ex. Control vs Surgery in 6M)
+-   Death/FU loss before 6 month?
+:::
+
+## [TTE: Clone censor weight with grace period]{style="color:#FF6666;"}
+<img src="img/lancethead.png"/>
+
+## [TTE: Clone censor weight with grace period]{style="color:#FF6666;"}
+<img src="img/ccw2.png"/>
+
+## [TTE: Clone censor weight with grace period]{style="color:#FF6666;"}
+<img src="img/ccw3.png"/>
+
+## [TTE: Clone censor weight with grace period]{style="color:#FF6666;"}
+<img src="img/ccw4.png"/>
+
+## [TTE: Censor Induces Selection Bias!]{style="color:#FF6666;"}
+<img src="img/wt.png"/>
+
+## [TTE: Censor Induces Selection Bias!]{style="color:#FF6666;"}
+<img src="img/tram.png"/>
+
+## [TTE: Censor Induces Selection Bias!]{style="color:#FF6666;"}
+<img src="img/fal.png"/>
+<img src="img/pral.png"/>
+
+## [TTE: Censor Induces Selection Bias!]{style="color:#FF6666;"}
+<img src="img/psformula.png"/>
+
+## [TTE: Time zero problem]{style="color:#FF6666;"}
+-   Individuals included in analysis multiple times
+-   Bootstrap
+
+## [TTE: Time zero problem]{style="color:#FF6666;"}
+-   Non-unique choice of time-zero
+-   Ex) HRT among postmenopausal women with no use of HRT for previous 2 years
+-   Solution?
+
+## [ITT: is it possible?]{style="color:#FF6666;"}
+
+-   Closest Analog: Comparison of initiation strategy
+-   If RCT?: All people not taking treatment at baseline-\>goes to same group
+-   If initiation occurs shorly after assignment to treatment-\> observation analogue roughly preserves key feature
+
+
+## [TTE: Time zero problem]{style="color:#FF6666;"}
+
+-   First eligible time
+-   Randomly chose eligible time
+-   Every eligible time: Multiple sequential trial
+
+
+
+# [Multiple Sequential Trial Emulation]{style="color:navy;"}
