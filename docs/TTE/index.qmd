@@ -34,20 +34,21 @@ grViz("
 ")
 ```
 
+
 ## [RCT]{style="color:#FF6666;"}
 
-::: {.incremental}
-- Ideal **BUT** not always
-- _Ethical_
-- _Feasible_
-- _Timely_
+::: incremental
+-   Ideal **BUT** not always
+-   *Ethical*
+-   *Feasible*
+-   *Timely*
 :::
 
 ## [RCT: Ethics]{style="color:#FF6666;"}
-::: {.incremental}
+
+::: incremental
 -   Absence of clinical equipose
--   SUPPORT trial controversy
-<img src="img/support.png"/>
+-   SUPPORT trial controversy <img src="img/support.png"/>
 :::
 
 ## [RCT: Feasibility]{style="color:#FF6666;"}
@@ -56,45 +57,47 @@ grViz("
 -   RCT: half under 60
 -   Rare disease?
 
-
 ## [RCT: Feasibility]{style="color:#FF6666;"}
+
 ::: {.layout-ncol="2"}
-<img src="img/nsclc.png"/>
-<img src="img/median.png"/>
+<img src="img/nsclc.png"/> <img src="img/median.png"/>
 :::
 
 ## [RCT: Time]{style="color:#FF6666;"}
 
 ::: {.column width="100%"}
-<img src="img/aa.png" style="display: block; margin: auto; width: 80%; margin-top: 10px;"/>
-<br>
-- _Later confirmed by randomized trial_
+<img src="img/aa.png" style="display: block; margin: auto; width: 80%; margin-top: 10px;"/> <br> - *Later confirmed by randomized trial*
 :::
 
 ## [Real World Data]{style="color:#FF6666;"}
+
 -   Need for observational Studies...
--   _**BUT**_
+-   ***BUT***
 
 ## [RWD: Confounding]{style="color:#FF6666;"}
+
 <img src="img/conf.png"/>
 
 ## [RWD: Time zero problem]{style="color:#FF6666;"}
+
 -   Eligibility is met(E)
 -   Time to start follow up(T0)
 -   Assignment (A)
 
 ## [RWD: Time zero problem]{style="color:#FF6666;"}
-::: {.incremental}
+
+::: incremental
 -   Example
 -   E: Lung cancer Dx
 -   T: Start of Follow-up
 -   A: Surgery(Control) assignment
-::: 
+:::
 
 ## [RWD: Time zero problem]{style="color:#FF6666;"}
 
 ::: {.column width="100%"}
 -   **RCT**
+
 ```{r, echo=FALSE}
 library(ggplot2)
 library(grid)
@@ -117,14 +120,19 @@ p <- ggplot() +
   theme_void()
 p
 ```
-::: 
+:::
 
 ## [RWD: Time zero problem]{style="color:#FF6666;"}
-::: {.column width="100%"}
+::: {.columns}
+
+::: {.column width="40%"}
 -   **Prevalent user bias**
 -   E: Cancer
 -   T0:Follow up
 -   A: Statin assign
+:::
+
+::: {.column width="60%"}
 ```{r, echo=FALSE}
 library(ggplot2)
 library(grid)
@@ -147,30 +155,35 @@ p <- ggplot() +
   theme_void()
 p
 ```
-::: 
+:::
+:::
 
 ## [RWD: Time zero problem]{style="color:#FF6666;"}
-::: {.layout-ncol="2"}
-- **HR 0.85(0.82-0.87)**
 
-![](img/nejmprev.png)
-![](img/nejmdesign.png)
+::: {.layout-ncol="2"}
+- **HR 0.85 (0.82-0.87)**
+
+![](img/nejmprev.png){width=45%} ![](img/nejmdesign.png){width=45%}
 :::
 
 ## [RCT]{style="color:#FF6666;"}
+
 ::: {.layout-ncol="1"}
--**HR 1.00(0.93-1.08)**
+\-**HR 1.00(0.93-1.08)**
 
 ![](img/meta.png)
 :::
 
-
 ## [RWD: Time zero problem]{style="color:#FF6666;"}
-::: {.column width="100%"}
+::: {.columns}
+
+::: {.column width="40%"}
 -   **Immortal time bias**
 -   E: Menopause
 -   T0: Start Follow-up
 -   A: HRT assignment
+:::
+::: {.column width="60%"}
 ```{r, echo=FALSE}
 library(ggplot2)
 library(grid)
@@ -193,19 +206,20 @@ p <- ggplot() +
   theme_void()
 p
 ```
-::: 
+:::
+:::
 
 ## [RWD: Time zero problem]{style="color:#FF6666;"}
+
 ::: {.layout-ncol="1"}
--   **RR 0.61 (0.52-0.71)**
-<img src="img/hrt.png"/>
--   _“Women were asked about use and duration of hormone therapy after menopause.(Updated biennially)”_
+-   **RR 0.61 (0.52-0.71)** <img src="img/hrt.png"/>
+-   *“Women were asked about use and duration of hormone therapy after menopause.(Updated biennially)”*
 :::
 
 ## [RCT]{style="color:#FF6666;"}
+
 ::: {.layout-ncol="1"}
--   **HR 1.23 (0.99-1.53)**
-<img src="img/hrtnejm.png"/>
+-   **HR 1.23 (0.99-1.53)** <img src="img/hrtnejm.png"/>
 :::
 
 # [Target Trial Emulation]{style="color:navy;"}
@@ -225,50 +239,57 @@ grViz("
 ```
 
 ## [How about?]{style="color:#FF6666;"}
-<br>
--   Emulate RCT to avoid bias!
+
+<br> - Emulate RCT to avoid bias!
 
 ## [Key components of protocol]{style="color:#FF6666;"}
--   Eligibility criteria
--   Start and End of F/U
--   Treatment strategies
--   Outcomes of interest
--   Casual contrast
--   Data Analysis plan
+- Treatment strategies
+- Eligibility criteria
+- Outcomes of interest
+- Start and End of F/U
+- Casual contrast
+- Data Analysis plan
+
+## [Key components of protocol]{style="color:#FF6666;"}
+- **Treatment strategies**
+- Eligibility criteria
+- Outcomes of interest
+- Start and End of F/U
+- Casual contrast
+- Data Analysis plan
 
 ## [TTE: Treatment strategies]{style="color:#FF6666;"}
-::: {.container}
 
-<img src="img/ideal.png" style="width:80%; display:block; margin: 0 auto;"/>
+::: {.container .text-center}
+<img src="img/ideal.png" style="width:55%; display:block; margin: 0 auto;"/>
 
-
-::: {.text-center}
-- **E:** eGFR < 30
-- **Group A:** eGFR 10-14
-- **Group B:** eGFR 5-7
-- *Before trial, observational studies investigating this causal question showed a strong survival advantage for late dialysis start*
-:::
-
+-   **E:** eGFR < 30
+-   **Group A:** eGFR 10-14
+-   **Group B:** eGFR 5-7
+-   _Before trial,<br> observational studies investigating this causal question showed a **strong survival advantage for late dialysis start**_
 :::
 
 ## [TTE: Treatment strategies]{style="color:#FF6666;"}
-::: {.incremental}
+
+::: incremental
 -   Lets consider Observational trial
 -   **Can we assign Individual to Unique strategies?**
--   Ex) Individual with _eGFR 16_ at FU 1month
+-   Ex) Individual with *eGFR 16* at FU 1month
 -   Strategy A or B?
 :::
 
-## [TTE: CloneCensor Weight method]{style="color:#FF6666;"}
-::: {.incremental}
--   Why not All?
--   Double allocation: prevents bias of random assignment
--   Just Clone and censor
-<img src="img/ccw.png"/>
-:::
-
+# [TTE: Clone Censor Weight method]{style="color:navy;"}
 
 ## [TTE: Clone Censor Weight method]{style="color:#FF6666;"}
+
+::: incremental
+-   Why not All?
+-   Double allocation: prevents bias of random assignment
+-   Just Clone and censor <img src="img/ccw.png" height="400px" width="auto"/>
+:::
+
+## [TTE: Clone Censor Weight method]{style="color:#FF6666;"}
+
 ```{r, echo=FALSE}
 library(flextable)
 data <- data.frame(
@@ -281,78 +302,81 @@ data <- data.frame(
   Hazard_Ratio_CI = c("1.04 (0.83 to 1.30)", "0.96 (0.94 to 0.99)", 
                       "1.58 (1.19 to 1.78)", "1.46 (1.19 to 1.78)")
 )
-colnames(data) <- gsub("_", " ", colnames(data))  # non-breaking space (alt+0160 on Windows)
+colnames(data) <- gsub("_", " ", colnames(data))  
 ft <- flextable(data) %>%
   set_header_labels(`Specific Analysis` = "Specific Analysis",
                     `Correct Study Design` = "Correct Study Design",
                     `Biases Introduced` = "Biases Introduced",
                     `Confounding Adjustment Necessary` = "Confounding Adjustment Necessary",
                     `Hazard Ratio CI` = "Hazard Ratio (95% CI)") %>%
+  bold(i = ~ grepl("Selection bias", `Biases Introduced`) | grepl("Immortal time bias", `Biases Introduced`), 
+       j = "Biases Introduced") %>%
+  bold(i = ~ grepl("1.58", `Hazard Ratio CI`) | grepl("1.46", `Hazard Ratio CI`), 
+       j = "Hazard Ratio CI") %>%
   autofit()
 ft
 ```
+
 ## [TTE: Is there Immediate Assignment?]{style="color:#FF6666;"}
-::: {.incremental}
+
+::: incremental
 -   Do we recieve surgery at the moment diagnosed?
 -   No
 -   Grace period!
--   _Real world: investigators need to define grace period after time zero during which initiation is still considered to be immediate_
+-   *Real world: investigators need to define grace period after time zero during which initiation is still considered to be immediate*
 :::
 
 ## [TTE: Is there Immediate Assignment?]{style="color:#FF6666;"}
-::: {.incremental}
+
+::: incremental
 -   If 6 months: surgery at 1 month, 3month <br> -\> Can be on Tx group!
 -   Redefinition of intervention(Ex. Control vs Surgery in 6M)
 -   Death/FU loss before 6 month?
 :::
 
 ## [TTE: Clone censor weight with grace period]{style="color:#FF6666;"}
+
 <img src="img/lancethead.png"/>
 
 ## [TTE: Clone censor weight with grace period]{style="color:#FF6666;"}
+
 <img src="img/ccw2.png"/>
 
 ## [TTE: Clone censor weight with grace period]{style="color:#FF6666;"}
+
 <img src="img/ccw3.png"/>
 
 ## [TTE: Clone censor weight with grace period]{style="color:#FF6666;"}
+
 <img src="img/ccw4.png"/>
 
 ## [TTE: Censor Induces Selection Bias!]{style="color:#FF6666;"}
+
 <img src="img/wt.png"/>
 
 ## [TTE: Censor Induces Selection Bias!]{style="color:#FF6666;"}
-<img src="img/tram.png"/>
+
+<img src="img/censorgraph.png"/>
 
 ## [TTE: Censor Induces Selection Bias!]{style="color:#FF6666;"}
-<img src="img/fal.png"/>
-<img src="img/pral.png"/>
 
-## [TTE: Censor Induces Selection Bias!]{style="color:#FF6666;"}
-<img src="img/psformula.png"/>
-
-## [TTE: Time zero problem]{style="color:#FF6666;"}
--   Individuals included in analysis multiple times
--   Bootstrap
-
-## [TTE: Time zero problem]{style="color:#FF6666;"}
--   Non-unique choice of time-zero
--   Ex) HRT among postmenopausal women with no use of HRT for previous 2 years
--   Solution?
+<img src="img/censorgraph2.png"/>
 
 ## [ITT: is it possible?]{style="color:#FF6666;"}
-
 -   Closest Analog: Comparison of initiation strategy
--   If RCT?: All people not taking treatment at baseline-\>goes to same group
--   If initiation occurs shorly after assignment to treatment-\> observation analogue roughly preserves key feature
+-   If RCT?: All people not taking treatment at baseline <br> -\> _goes to same group_
+-   If initiation occurs shorly after assignment to treatment <br> -\> _observation analogue roughly preserves key feature_
 
+# [TTE: Multiple sequential trial]{style="color:navy;"}
 
-## [TTE: Time zero problem]{style="color:#FF6666;"}
-
--   First eligible time
+## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+::: incremental
+-   What if individual meets eligibility criteria multiple times?
 -   Randomly chose eligible time
 -   Every eligible time: Multiple sequential trial
+:::
+
+## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+<img src="img/multiple.png"/>
 
 
-
-# [Multiple Sequential Trial Emulation]{style="color:navy;"}
