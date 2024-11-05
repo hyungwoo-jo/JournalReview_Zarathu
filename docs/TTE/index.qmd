@@ -34,7 +34,6 @@ grViz("
 ")
 ```
 
-
 ## [RCT]{style="color:#FF6666;"}
 
 ::: incremental
@@ -123,8 +122,8 @@ p
 :::
 
 ## [RWD: Time zero problem]{style="color:#FF6666;"}
-::: {.columns}
 
+::: columns
 ::: {.column width="40%"}
 -   **Prevalent user bias**
 -   E: Cancer
@@ -161,9 +160,9 @@ p
 ## [RWD: Time zero problem]{style="color:#FF6666;"}
 
 ::: {.layout-ncol="2"}
-- **HR 0.85 (0.82-0.87)**
+-   **HR 0.85 (0.82-0.87)**
 
-![](img/nejmprev.png){width=45%} ![](img/nejmdesign.png){width=45%}
+![](img/nejmprev.png){width="45%"} ![](img/nejmdesign.png){width="45%"}
 :::
 
 ## [RCT]{style="color:#FF6666;"}
@@ -175,14 +174,15 @@ p
 :::
 
 ## [RWD: Time zero problem]{style="color:#FF6666;"}
-::: {.columns}
 
+::: columns
 ::: {.column width="40%"}
 -   **Immortal time bias**
 -   E: Menopause
 -   T0: Start Follow-up
 -   A: HRT assignment
 :::
+
 ::: {.column width="60%"}
 ```{r, echo=FALSE}
 library(ggplot2)
@@ -243,30 +243,32 @@ grViz("
 <br> - Emulate RCT to avoid bias!
 
 ## [Key components of protocol]{style="color:#FF6666;"}
-- Treatment strategies
-- Eligibility criteria
-- Outcomes of interest
-- Start and End of F/U
-- Casual contrast
-- Data Analysis plan
+
+-   Treatment strategies
+-   Eligibility criteria
+-   Outcomes of interest
+-   Start and End of F/U
+-   Casual contrast
+-   Data Analysis plan
 
 ## [Key components of protocol]{style="color:#FF6666;"}
-- **Treatment strategies**
-- Eligibility criteria
-- Outcomes of interest
-- Start and End of F/U
-- Casual contrast
-- Data Analysis plan
+
+-   **Treatment strategies**
+-   Eligibility criteria
+-   Outcomes of interest
+-   Start and End of F/U
+-   Casual contrast
+-   Data Analysis plan
 
 ## [TTE: Treatment strategies]{style="color:#FF6666;"}
 
 ::: {.container .text-center}
 <img src="img/ideal.png" style="width:55%; display:block; margin: 0 auto;"/>
 
--   **E:** eGFR < 30
+-   **E:** eGFR \< 30
 -   **Group A:** eGFR 10-14
 -   **Group B:** eGFR 5-7
--   _Before trial,<br> observational studies investigating this causal question showed a **strong survival advantage for late dialysis start**_
+-   Observational studies investigating this causal question showed a **strong survival advantage for late dialysis start**
 :::
 
 ## [TTE: Treatment strategies]{style="color:#FF6666;"}
@@ -278,7 +280,7 @@ grViz("
 -   Strategy A or B?
 :::
 
-# [TTE: Clone Censor Weight method]{style="color:navy;"}
+# [Clone Censor Weight method]{style="color:navy;"}
 
 ## [TTE: Clone Censor Weight method]{style="color:#FF6666;"}
 
@@ -317,16 +319,15 @@ ft <- flextable(data) %>%
 ft
 ```
 
-## [TTE: Is there Immediate Assignment?]{style="color:#FF6666;"}
+## [Is there Immediate Assignment?]{style="color:#FF6666;"}
 
 ::: incremental
 -   Do we recieve surgery at the moment diagnosed?
--   No
 -   Grace period!
 -   *Real world: investigators need to define grace period after time zero during which initiation is still considered to be immediate*
 :::
 
-## [TTE: Is there Immediate Assignment?]{style="color:#FF6666;"}
+## [Is there Immediate Assignment?]{style="color:#FF6666;"}
 
 ::: incremental
 -   If 6 months: surgery at 1 month, 3month <br> -\> Can be on Tx group!
@@ -363,11 +364,13 @@ ft
 <img src="img/censorgraph2.png"/>
 
 ## [ITT: is it possible?]{style="color:#FF6666;"}
--   Closest Analog: Comparison of initiation strategy
--   If RCT?: All people not taking treatment at baseline <br> -\> _goes to same group_
--   If initiation occurs shorly after assignment to treatment <br> -\> _observation analogue roughly preserves key feature_
 
-# [TTE: Multiple sequential trial]{style="color:navy;"}
+-   Closest Analog: Comparison of initiation strategy
+-   If RCT?: All people not taking treatment at baseline <br> -\> *goes to same group*
+-   If initiation occurs shorly after assignment to treatment <br> -\> *observation analogue roughly preserves key feature*
+-   Per-protocol effect of Initiator vs non-Initiator!
+
+# [Multiple sequential trial]{style="color:navy;"}
 
 ## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
 ::: incremental
@@ -377,6 +380,54 @@ ft
 :::
 
 ## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+
 <img src="img/multiple.png"/>
 
+## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+::: incremental
+-   ITT: initiator vs non-initiator 
+-   PP: continuous user vs never user
+-   As-treated: N year user vs non user
+:::
 
+## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+-   Unmeasured Confounding
+-   Ex) One could recieve Tx when in Danger!
+-   Ex) What if it takes DM drugs to have effect 3M?
+
+## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+::: incremental
+-   HRT after Menopause
+-   What if we exclude early followup?
+-   HR deviation(time-varying)
+-   Selection Bias!
+:::
+
+## [Common observational study]{style="color:#FF6666;"}
+-   _Current vs never(non) user analysis_
+-   Hadrd to adjust for measured confounders <br> that are affected by prior treatment
+-   Ex) LDL in Statin~CHD
+
+## [Common observational study]{style="color:#FF6666;"}
+-   _Current vs never(non) user analysis_
+- A: Statin Assign
+- L: LDL
+- D: CHD
+- U: Poor diet
+<img src="img/dag.png"/>
+
+## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+-   _Current vs never(non) user analysis_
+-   Unmeasured Confounding vs Selection Bias
+
+## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+<img src="img/adhr.png"/>
+
+
+# [Active Comparator New User Design]{style="color:navy;"}
+
+## [TTE:ACNU]{style="color:#FF6666;"}
+- How about A vs B?
+
+## [TTE:ACNU]{style="color:#FF6666;"}
+<img src="img/acnu.png"/>
