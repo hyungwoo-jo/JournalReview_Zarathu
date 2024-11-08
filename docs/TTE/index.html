@@ -10,7 +10,7 @@
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>Target Trial Emulation</title>
+  <title>Causal Inference and Observational Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -333,8 +333,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title"><span style="color:red;">Target Trial Emulation</span></h1>
-  <p class="subtitle"><em>Reflection on modern methods</em></p>
+  <h1 class="title"><span style="color:red;">Causal Inference and Observational Data</span></h1>
+  <p class="subtitle"><em>Approaches and Limitations </em></p>
 
 <div class="quarto-title-authors">
 </div>
@@ -349,10 +349,357 @@
 <h2><span style="color:#FF6666;">What we want</span></h2>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-3fa7562554f04803482b" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-3fa7562554f04803482b">{"x":{"diagram":"\n  digraph {\n    rankdir=LR\n    node [shape = plaintext, fontcolor=navy, fontname=\"Arial\"]\n    edge [color=red, penwidth=0.5]\n    A -> Y\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-7e329ac7aead891de593" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-7e329ac7aead891de593">{"x":{"diagram":"\n  digraph {\n    rankdir=LR\n    node [shape = plaintext, fontcolor=navy, fontname=\"Arial\"]\n    edge [color=red, penwidth=0.5]\n    A -> Y\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
+</section>
+<section id="causal-inference" class="slide level2">
+<h2><span style="color:#FF6666;">Causal Inference</span></h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>A</th>
+<th>Y</th>
+<th>Y<sub>A=0</sub></th>
+<th>Y<sub>A=1</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rheia</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td>Kronos</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>?</td>
+</tr>
+<tr class="odd">
+<td>Demeter</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td>Hades</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+</tr>
+<tr class="odd">
+<td>Hestia</td>
+<td>1</td>
+<td>0</td>
+<td>?</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Poseidon</td>
+<td>1</td>
+<td>0</td>
+<td>?</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Hera</td>
+<td>1</td>
+<td>0</td>
+<td>?</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Zeus</td>
+<td>1</td>
+<td>1</td>
+<td>?</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Artemis</td>
+<td>1</td>
+<td>1</td>
+<td>?</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Apollo</td>
+<td>1</td>
+<td>1</td>
+<td>?</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Leto</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td>Ares</td>
+<td>1</td>
+<td>1</td>
+<td>?</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Athena</td>
+<td>1</td>
+<td>1</td>
+<td>?</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Hephaestus</td>
+<td>1</td>
+<td>1</td>
+<td>?</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Aphrodite</td>
+<td>1</td>
+<td>1</td>
+<td>?</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Polyphemus</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+</tr>
+<tr class="odd">
+<td>Persephone</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td>Hermes</td>
+<td>1</td>
+<td>0</td>
+<td>?</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Hebe</td>
+<td>1</td>
+<td>0</td>
+<td>?</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Dionysus</td>
+<td>1</td>
+<td>0</td>
+<td>?</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="causal-inference-1" class="slide level2">
+<h2><span style="color:#FF6666;">Causal Inference</span></h2>
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
+<div style="width: 30%; font-size: 0.7em;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>A</th>
+<th>Y</th>
+<th>Y<sub>A=0</sub></th>
+<th>Y<sub>A=1</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rheia</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>0</strong></td>
+</tr>
+<tr class="even">
+<td>Kronos</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td><strong>0</strong></td>
+</tr>
+<tr class="odd">
+<td>Demeter</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>0</strong></td>
+</tr>
+<tr class="even">
+<td>Hades</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>0</strong></td>
+</tr>
+<tr class="odd">
+<td>Hestia</td>
+<td>1</td>
+<td>0</td>
+<td><strong>0</strong></td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Poseidon</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Hera</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Zeus</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Artemis</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Apollo</td>
+<td>1</td>
+<td>1</td>
+<td><strong>0</strong></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Leto</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>0</strong></td>
+</tr>
+<tr class="even">
+<td>Ares</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Athena</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Hephaestus</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Aphrodite</td>
+<td>1</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Polyphemus</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>0</strong></td>
+</tr>
+<tr class="odd">
+<td>Persephone</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><strong>0</strong></td>
+</tr>
+<tr class="even">
+<td>Hermes</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Hebe</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Dionysus</td>
+<td>1</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="width: 50%; font-size: 0.7em;">
+<ul>
+<li><p>관측 결과는 Association을 보이는가?</p></li>
+<li><p>처치를 받은 그룹의 위험이 처치를 받지 않은 그룹보다 큼.</p></li>
+<li><p>만약 Potential Outcomes를 모두 Table 처럼 알 수 있다고 가정한다면 (실제는 불가능), Table 결과는 Causation을 보이는가?</p></li>
+<li><p>모든 대상자가 심장 이식을 받았을 시의 위험과 받지 않았을 시의 위험이 같음.</p></li>
+<li><p><strong>Association</strong>과 <strong>Causation</strong>의 결과가 다른 것은, 심장 이식을 받은 대상자들이 받지 않은 대상자들에 비하여 <strong>더 상태가 좋지 않을 것으로 예상</strong>할 수 있음.</p></li>
+<li><p>결과적으로 Confounding 이 존재함</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="causal-inference-2" class="slide level2">
+<h2><span style="color:#FF6666;">Causal Inference</span></h2>
+<ul>
+<li>Exchangeability: <span class="math inline">\(Y^a \perp A\)</span><br>
+</li>
+<li>치료군의 potential treatment effect (a=0 or 1) 는 비치료군의 potential treatment effect (a=0 or 1)와 같다. 결과적으로, Conditional Risk = Marginal Risk</li>
+</ul>
+<p><span class="math display">\[ Pr[Y^a = 1 | A = 1] = Pr[Y^a = 1 | A = 0] = Pr[Y^a = 1], \text{ for all } a \]</span></p>
+</section>
+<section id="causal-inference-3" class="slide level2">
+<h2><span style="color:#FF6666;">Causal Inference</span></h2>
+<ul>
+<li>Conditional Exchangeability <span class="math display">\[ Pr[Y^a = 1 | A = 1, L = l] = Pr[Y^a = 1 | A = 0, L = l] = Pr[Y^a = 1 | L = l], \text{ for all } a \]</span></li>
+</ul>
+</section>
+<section id="causal-inference-what-we-want" class="slide level2">
+<h2><span style="color:#FF6666;">Causal Inference: What we want</span></h2>
+<p><span class="math display">\[E[Y | A = 1] - E[Y | A = 0] \]</span></p>
+<p><span class="math display">\[E[Y^{a=1} | A = 1] - E[Y^{a=0} | A = 0] \]</span></p>
+<p><span class="math display">\[E[Y^{a=1}] - E[Y^{a=0}] : \text{Average causal effect!} \]</span></p>
 </section>
 <section id="rct" class="slide level2">
 <h2><span style="color:#FF6666;">RCT</span></h2>
@@ -525,8 +872,8 @@
 <h2><span style="color:#FF6666;">Back to Question</span></h2>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-2968c3903f7e07efbfe1" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-2968c3903f7e07efbfe1">{"x":{"diagram":"\n  digraph {\n    rankdir=LR\n    node [shape = plaintext, fontcolor=navy, fontname=\"Arial\"]\n    edge [color=red, penwidth=0.5]\n    A -> Y\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-de72b739ce63cddb49ba" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-de72b739ce63cddb49ba">{"x":{"diagram":"\n  digraph {\n    rankdir=LR\n    node [shape = plaintext, fontcolor=navy, fontname=\"Arial\"]\n    edge [color=red, penwidth=0.5]\n    A -> Y\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -598,7 +945,7 @@
 <h2><span style="color:#FF6666;">TTE: Clone Censor Weight method</span></h2>
 <div class="cell">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-e480b1ec{}.cl-e479d7be{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e479d7d2{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e47cbb00{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e47cda90{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cda9a{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cda9b{width:4.386in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdaa4{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdaa5{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdaa6{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdaa7{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdaae{width:4.386in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdaaf{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdab0{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdab1{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdab8{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdab9{width:4.386in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdaba{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdabb{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdabc{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdac2{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdac3{width:4.386in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdac4{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdacc{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdacd{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdace{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdacf{width:4.386in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdad6{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e47cdad7{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-e480b1ec"><thead><tr style="overflow-wrap:break-word;"><th class="cl-e47cda90"><p class="cl-e47cbb00"><span class="cl-e479d7be">Specific Analysis</span></p></th><th class="cl-e47cda9a"><p class="cl-e47cbb00"><span class="cl-e479d7be">Correct Study Design</span></p></th><th class="cl-e47cda9b"><p class="cl-e47cbb00"><span class="cl-e479d7be">Biases Introduced</span></p></th><th class="cl-e47cdaa4"><p class="cl-e47cbb00"><span class="cl-e479d7be">Confounding Adjustment Necessary</span></p></th><th class="cl-e47cdaa5"><p class="cl-e47cbb00"><span class="cl-e479d7be">Hazard Ratio (95% CI)</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-e47cdaa6"><p class="cl-e47cbb00"><span class="cl-e479d7be">Randomized IDEAL trial</span></p></td><td class="cl-e47cdaa7"><p class="cl-e47cbb00"><span class="cl-e479d7be">Yes</span></p></td><td class="cl-e47cdaae"><p class="cl-e47cbb00"><span class="cl-e479d7be">—</span></p></td><td class="cl-e47cdaaf"><p class="cl-e47cbb00"><span class="cl-e479d7be">No</span></p></td><td class="cl-e47cdab0"><p class="cl-e47cbb00"><span class="cl-e479d7be">1.04 (0.83 to 1.30)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e47cdab1"><p class="cl-e47cbb00"><span class="cl-e479d7be">Target trial emulation analysis</span></p></td><td class="cl-e47cdab8"><p class="cl-e47cbb00"><span class="cl-e479d7be">Yes</span></p></td><td class="cl-e47cdab9"><p class="cl-e47cbb00"><span class="cl-e479d7be">—</span></p></td><td class="cl-e47cdaba"><p class="cl-e47cbb00"><span class="cl-e479d7be">Yes</span></p></td><td class="cl-e47cdabb"><p class="cl-e47cbb00"><span class="cl-e479d7be">0.96 (0.94 to 0.99)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e47cdabc"><p class="cl-e47cbb00"><span class="cl-e479d7be">Common but biased analysis 1</span></p></td><td class="cl-e47cdac2"><p class="cl-e47cbb00"><span class="cl-e479d7be">No</span></p></td><td class="cl-e47cdac3"><p class="cl-e47cbb00"><span class="cl-e479d7d2">Selection bias (depletion of susceptibles), lead time bias</span></p></td><td class="cl-e47cdac4"><p class="cl-e47cbb00"><span class="cl-e479d7be">Yes</span></p></td><td class="cl-e47cdacc"><p class="cl-e47cbb00"><span class="cl-e479d7d2">1.58 (1.19 to 1.78)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e47cdacd"><p class="cl-e47cbb00"><span class="cl-e479d7be">Common but biased analysis 2</span></p></td><td class="cl-e47cdace"><p class="cl-e47cbb00"><span class="cl-e479d7be">No</span></p></td><td class="cl-e47cdacf"><p class="cl-e47cbb00"><span class="cl-e479d7d2">Immortal time bias</span></p></td><td class="cl-e47cdad6"><p class="cl-e47cbb00"><span class="cl-e479d7be">Yes</span></p></td><td class="cl-e47cdad7"><p class="cl-e47cbb00"><span class="cl-e479d7d2">1.46 (1.19 to 1.78)</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-5438c8d0{}.cl-5431e3e4{font-family:'DejaVu Sans';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5431e3f8{font-family:'DejaVu Sans';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5434cafa{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5434eb0c{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb16{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb20{width:4.386in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb21{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb2a{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb2b{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb2c{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb2d{width:4.386in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb34{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb35{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb36{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb3e{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb3f{width:4.386in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb40{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb41{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb48{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb49{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb4a{width:4.386in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb4b{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb52{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb53{width:2.374in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb5c{width:1.737in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb5d{width:4.386in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb5e{width:2.722in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5434eb5f{width:1.822in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-5438c8d0"><thead><tr style="overflow-wrap:break-word;"><th class="cl-5434eb0c"><p class="cl-5434cafa"><span class="cl-5431e3e4">Specific Analysis</span></p></th><th class="cl-5434eb16"><p class="cl-5434cafa"><span class="cl-5431e3e4">Correct Study Design</span></p></th><th class="cl-5434eb20"><p class="cl-5434cafa"><span class="cl-5431e3e4">Biases Introduced</span></p></th><th class="cl-5434eb21"><p class="cl-5434cafa"><span class="cl-5431e3e4">Confounding Adjustment Necessary</span></p></th><th class="cl-5434eb2a"><p class="cl-5434cafa"><span class="cl-5431e3e4">Hazard Ratio (95% CI)</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-5434eb2b"><p class="cl-5434cafa"><span class="cl-5431e3e4">Randomized IDEAL trial</span></p></td><td class="cl-5434eb2c"><p class="cl-5434cafa"><span class="cl-5431e3e4">Yes</span></p></td><td class="cl-5434eb2d"><p class="cl-5434cafa"><span class="cl-5431e3e4">—</span></p></td><td class="cl-5434eb34"><p class="cl-5434cafa"><span class="cl-5431e3e4">No</span></p></td><td class="cl-5434eb35"><p class="cl-5434cafa"><span class="cl-5431e3e4">1.04 (0.83 to 1.30)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5434eb36"><p class="cl-5434cafa"><span class="cl-5431e3e4">Target trial emulation analysis</span></p></td><td class="cl-5434eb3e"><p class="cl-5434cafa"><span class="cl-5431e3e4">Yes</span></p></td><td class="cl-5434eb3f"><p class="cl-5434cafa"><span class="cl-5431e3e4">—</span></p></td><td class="cl-5434eb40"><p class="cl-5434cafa"><span class="cl-5431e3e4">Yes</span></p></td><td class="cl-5434eb41"><p class="cl-5434cafa"><span class="cl-5431e3e4">0.96 (0.94 to 0.99)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5434eb48"><p class="cl-5434cafa"><span class="cl-5431e3e4">Common but biased analysis 1</span></p></td><td class="cl-5434eb49"><p class="cl-5434cafa"><span class="cl-5431e3e4">No</span></p></td><td class="cl-5434eb4a"><p class="cl-5434cafa"><span class="cl-5431e3f8">Selection bias (depletion of susceptibles), lead time bias</span></p></td><td class="cl-5434eb4b"><p class="cl-5434cafa"><span class="cl-5431e3e4">Yes</span></p></td><td class="cl-5434eb52"><p class="cl-5434cafa"><span class="cl-5431e3f8">1.58 (1.19 to 1.78)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5434eb53"><p class="cl-5434cafa"><span class="cl-5431e3e4">Common but biased analysis 2</span></p></td><td class="cl-5434eb5c"><p class="cl-5434cafa"><span class="cl-5431e3e4">No</span></p></td><td class="cl-5434eb5d"><p class="cl-5434cafa"><span class="cl-5431e3f8">Immortal time bias</span></p></td><td class="cl-5434eb5e"><p class="cl-5434cafa"><span class="cl-5431e3e4">Yes</span></p></td><td class="cl-5434eb5f"><p class="cl-5434cafa"><span class="cl-5431e3f8">1.46 (1.19 to 1.78)</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </section>
@@ -655,8 +1002,38 @@
 <ul>
 <li>Closest Analog: Comparison of initiation strategy</li>
 <li>If RCT?: All people not taking treatment at baseline <br> -&gt; <em>goes to same group</em></li>
-<li>If initiation occurs shorly after assignment to treatment <br> -&gt; <em>observation analogue roughly preserves key feature</em></li>
+<li>If initiation occurs shortly after assignment to treatment <br> -&gt; <em>observation analogue roughly preserves key feature</em></li>
 <li>Per-protocol effect of Initiator vs non-Initiator!</li>
+</ul>
+</section>
+<section id="tte-clone-censor-weight" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Clone censor weight</span></h2>
+<ul>
+<li>Grace Period</li>
+<li>Start Tx based on Biomarker</li>
+<li>Tx duration comparison</li>
+<li>How about A vs B?</li>
+</ul>
+</section></section>
+<section>
+<section id="active-comparator-new-user-design" class="title-slide slide level1 center">
+<h1><span style="color:navy;">Active Comparator New User Design</span></h1>
+
+</section>
+<section id="tteacnu" class="slide level2">
+<h2><span style="color:#FF6666;">TTE:ACNU</span></h2>
+<ul>
+<li>How about A vs B?</li>
+</ul>
+</section>
+<section id="tteacnu-1" class="slide level2">
+<h2><span style="color:#FF6666;">TTE:ACNU</span></h2>
+
+<img src="img/acnu.png" class="r-stretch"></section>
+<section id="tteacnu-2" class="slide level2">
+<h2><span style="color:#FF6666;">TTE:ACNU</span></h2>
+<ul>
+<li>What about Preventive measure?</li>
 </ul>
 </section></section>
 <section>
@@ -722,9 +1099,10 @@
 <li>A: Statin Assign</li>
 <li>L: LDL</li>
 <li>D: CHD</li>
-<li>U: Poor diet <img src="img/dag.png"></li>
+<li>U: Poor diet</li>
 </ul>
-</section>
+
+<img src="img/dag.png" class="r-stretch"></section>
 <section id="tte-multiple-sequential-trial-5" class="slide level2">
 <h2><span style="color:#FF6666;">TTE: Multiple sequential trial</span></h2>
 <ul>
@@ -735,22 +1113,96 @@
 <section id="tte-multiple-sequential-trial-6" class="slide level2">
 <h2><span style="color:#FF6666;">TTE: Multiple sequential trial</span></h2>
 
-<img src="img/adhr.png" class="r-stretch"></section></section>
+<img src="img/adhr.png" class="r-stretch"></section>
+<section id="tte-multiple-sequential-trial-7" class="slide level2">
+<h2><span style="color:#FF6666;">TTE: Multiple sequential trial</span></h2>
+<ul>
+<li>Do people stick to single therapy?</li>
+<li>What about dynamic Strategy?</li>
+<li>Real world: Time-varying treatment</li>
+</ul>
+</section></section>
 <section>
-<section id="active-comparator-new-user-design" class="title-slide slide level1 center">
-<h1><span style="color:navy;">Active Comparator New User Design</span></h1>
+<section id="g-methods" class="title-slide slide level1 center">
+<h1><span style="color:navy;">G-Methods</span></h1>
 
 </section>
-<section id="tteacnu" class="slide level2">
-<h2><span style="color:#FF6666;">TTE:ACNU</span></h2>
+<section id="g-methods-1" class="slide level2">
+<h2><span style="color:#FF6666;">G-Methods</span></h2>
+
+<img src="img/dag2.png" class="r-stretch"></section>
+<section id="g-methods-2" class="slide level2">
+<h2><span style="color:#FF6666;">G-Methods</span></h2>
 <ul>
-<li>How about A vs B?</li>
+<li>Methods that can handle treatment confounder feedback</li>
+<li>G-computation algorithm formula</li>
+<li>IP weighting</li>
+<li>Doubly-robust methods</li>
+<li>G-estimation</li>
 </ul>
 </section>
-<section id="tteacnu-1" class="slide level2">
-<h2><span style="color:#FF6666;">TTE:ACNU</span></h2>
+<section id="g-formula" class="slide level2">
+<h2><span style="color:#FF6666;">G-Formula</span></h2>
 
-<img src="img/acnu.png" class="r-stretch"><div class="quarto-auto-generated-content">
+<img src="img/tree.png" class="r-stretch"></section>
+<section id="g-formula-assumptions" class="slide level2">
+<h2><span style="color:#FF6666;">G-Formula: Assumptions</span></h2>
+<ul>
+<li>Conditional exchangeability</li>
+<li>Positivity</li>
+<li>Consistency: Observed outcome = potential outcome</li>
+<li>No interference: individual i의 outcome과 j의 tx는 독립</li>
+<li>High demensional data-&gt;Parametric Approach!</li>
+</ul>
+</section>
+<section id="g-formula-time-varying-treatment" class="slide level2">
+<h2><span style="color:#FF6666;">G-Formula: Time-varying treatment</span></h2>
+
+<img src="img/ice.png" class="r-stretch"></section>
+<section id="g-formula-time-varying-treatment-1" class="slide level2">
+<h2><span style="color:#FF6666;">G-Formula: Time-varying treatment</span></h2>
+<ul>
+<li>Main Question:</li>
+<li>What if no ICE?</li>
+<li>ICE probability should not be 1</li>
+<li>Ex) L1이 특정 값일 때 A1이 결정되는 경우!</li>
+</ul>
+</section>
+<section id="g-formula-time-varying-treatment-2" class="slide level2">
+<h2><span style="color:#FF6666;">G-Formula: Time-varying treatment</span></h2>
+<ul>
+<li>Main Question:</li>
+<li>What if no ICE?</li>
+<li>ICE probability should not be 1</li>
+<li>Ex) L1이 특정 값일 때 A1이 결정되는 경우!</li>
+</ul>
+</section>
+<section id="g-formula-time-varying-treatment-3" class="slide level2">
+<h2><span style="color:#FF6666;">G-Formula: Time-varying treatment</span></h2>
+<p><img src="img/gfrom1.png"> <img src="img/gfrom2.png"></p>
+</section>
+<section id="g-formula-time-varying-treatment-4" class="slide level2">
+<h2>## <span style="color:#FF6666;">G-Formula: Time-varying treatment</span></h2>
+
+<img src="img/gfrom3.png" class="r-stretch"></section>
+<section id="g-formula-double-robustly-estimation" class="slide level2">
+<h2><span style="color:#FF6666;">G-Formula: Double robustly estimation</span></h2>
+</section>
+<section id="g-formula-dynamic-strategy" class="slide level2">
+<h2><span style="color:#FF6666;">G-Formula: Dynamic strategy</span></h2>
+</section>
+<section id="g-formula-missing-data" class="slide level2">
+<h2><span style="color:#FF6666;">G-Formula: Missing data</span></h2>
+<ul>
+<li>TBC</li>
+</ul>
+</section>
+<section id="g-formula-censoring" class="slide level2">
+<h2><span style="color:#FF6666;">G-Formula: Censoring</span></h2>
+<ul>
+<li>TBC</li>
+</ul>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Target Trial Emulation</p>
 </div>

@@ -1,6 +1,6 @@
 ---
-title: " <span style='color:red;'>Target Trial Emulation</span>"
-subtitle: "_Reflection on modern methods_" 
+title: " <span style='color:red;'>Causal Inference and Observational Data</span>"
+subtitle: "_Approaches and Limitations _" 
 format: 
   revealjs:
     slide-number: true
@@ -33,6 +33,96 @@ grViz("
   }
 ")
 ```
+## [Causal Inference]{style="color:#FF6666;"}
+| Name       | A   | Y   | Y<sub>A=0</sub> | Y<sub>A=1</sub> |
+|------------|-----|-----|-----------------|-----------------|
+| Rheia      | 0   | 0   | 0               | ?               |
+| Kronos     | 0   | 1   | 1               | ?               |
+| Demeter    | 0   | 0   | 0               | ?               |
+| Hades      | 0   | 0   | 0               | ?               |
+| Hestia     | 1   | 0   | ?               | 0               |
+| Poseidon   | 1   | 0   | ?               | 0               |
+| Hera       | 1   | 0   | ?               | 0               |
+| Zeus       | 1   | 1   | ?               | 1               |
+| Artemis    | 1   | 1   | ?               | 1               |
+| Apollo     | 1   | 1   | ?               | 1               |
+| Leto       | 0   | 0   | 0               | ?               |
+| Ares       | 1   | 1   | ?               | 1               |
+| Athena     | 1   | 1   | ?               | 1               |
+| Hephaestus | 1   | 1   | ?               | 1               |
+| Aphrodite  | 1   | 1   | ?               | 1               |
+| Polyphemus | 0   | 0   | 0               | ?               |
+| Persephone | 0   | 0   | 0               | ?               |
+| Hermes     | 1   | 0   | ?               | 0               |
+| Hebe       | 1   | 0   | ?               | 0               |
+| Dionysus   | 1   | 0   | ?               | 0               |
+
+
+
+
+## [Causal Inference]{style="color:#FF6666;"}
+
+::: {style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;"}
+::: {style="width: 30%; font-size: 0.7em;"}
+| Name       | A   | Y   | Y<sub>A=0</sub> | Y<sub>A=1</sub> |
+|------------|-----|-----|-----------------|-----------------|
+| Rheia      | 0   | 0   | 0               | **0**           |
+| Kronos     | 0   | 1   | 1               | **0**           |
+| Demeter    | 0   | 0   | 0               | **0**           |
+| Hades      | 0   | 0   | 0               | **0**           |
+| Hestia     | 1   | 0   | **0**           | 0               |
+| Poseidon   | 1   | 0   | **1**           | 0               |
+| Hera       | 1   | 0   | **1**           | 0               |
+| Zeus       | 1   | 1   | **1**           | 1               |
+| Artemis    | 1   | 1   | **1**           | 1               |
+| Apollo     | 1   | 1   | **0**           | 1               |
+| Leto       | 0   | 0   | 0               | **0**           |
+| Ares       | 1   | 1   | **1**           | 1               |
+| Athena     | 1   | 1   | **1**           | 1               |
+| Hephaestus | 1   | 1   | **1**           | 1               |
+| Aphrodite  | 1   | 1   | **1**           | 1               |
+| Polyphemus | 0   | 0   | 0               | **0**           |
+| Persephone | 0   | 0   | 0               | **0**           |
+| Hermes     | 1   | 0   | **1**           | 0               |
+| Hebe       | 1   | 0   | **1**           | 0               |
+| Dionysus   | 1   | 0   | **1**           | 0               |
+:::
+
+::: {style="width: 50%; font-size: 0.7em;"}
+-   관측 결과는 Association을 보이는가?
+
+-   처치를 받은 그룹의 위험이 처치를 받지 않은 그룹보다 큼.
+
+-   만약 Potential Outcomes를 모두 Table 처럼 알 수 있다고 가정한다면 (실제는 불가능), Table 결과는 Causation을 보이는가?
+
+-   모든 대상자가 심장 이식을 받았을 시의 위험과 받지 않았을 시의 위험이 같음.
+
+-   **Association**과 **Causation**의 결과가 다른 것은, 심장 이식을 받은 대상자들이 받지 않은 대상자들에 비하여 **더 상태가 좋지 않을 것으로 예상**할 수 있음.
+
+-   결과적으로 Confounding 이 존재함
+:::
+:::
+
+------------------------------------------------------------------------
+
+## [Causal Inference]{style="color:#FF6666;"}
+
+-   Exchangeability: $Y^a \perp A$\
+-   치료군의 potential treatment effect (a=0 or 1) 는 비치료군의 potential treatment effect (a=0 or 1)와 같다. 결과적으로, Conditional Risk = Marginal Risk
+
+$$ Pr[Y^a = 1 | A = 1] = Pr[Y^a = 1 | A = 0] = Pr[Y^a = 1], \text{ for all } a $$
+
+## [Causal Inference]{style="color:#FF6666;"}
+
+-   Conditional Exchangeability $$ Pr[Y^a = 1 | A = 1, L = l] = Pr[Y^a = 1 | A = 0, L = l] = Pr[Y^a = 1 | L = l], \text{ for all } a $$
+
+## [Causal Inference: What we want]{style="color:#FF6666;"}
+
+$$E[Y | A = 1] - E[Y | A = 0] $$
+
+$$E[Y^{a=1} | A = 1] - E[Y^{a=0} | A = 0] $$
+
+$$E[Y^{a=1}] - E[Y^{a=0}] : \text{Average causal effect!} $$
 
 ## [RCT]{style="color:#FF6666;"}
 
@@ -367,12 +457,34 @@ ft
 
 -   Closest Analog: Comparison of initiation strategy
 -   If RCT?: All people not taking treatment at baseline <br> -\> *goes to same group*
--   If initiation occurs shorly after assignment to treatment <br> -\> *observation analogue roughly preserves key feature*
+-   If initiation occurs shortly after assignment to treatment <br> -\> *observation analogue roughly preserves key feature*
 -   Per-protocol effect of Initiator vs non-Initiator!
+
+## [TTE: Clone censor weight]{style="color:#FF6666;"}
+
+-   Grace Period
+-   Start Tx based on Biomarker
+-   Tx duration comparison
+-   How about A vs B?
+
+# [Active Comparator New User Design]{style="color:navy;"}
+
+## [TTE:ACNU]{style="color:#FF6666;"}
+
+-   How about A vs B?
+
+## [TTE:ACNU]{style="color:#FF6666;"}
+
+<img src="img/acnu.png"/>
+
+## [TTE:ACNU]{style="color:#FF6666;"}
+
+-   What about Preventive measure?
 
 # [Multiple sequential trial]{style="color:navy;"}
 
 ## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+
 ::: incremental
 -   What if individual meets eligibility criteria multiple times?
 -   Randomly chose eligible time
@@ -384,18 +496,21 @@ ft
 <img src="img/multiple.png"/>
 
 ## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+
 ::: incremental
--   ITT: initiator vs non-initiator 
+-   ITT: initiator vs non-initiator
 -   PP: continuous user vs never user
 -   As-treated: N year user vs non user
 :::
 
 ## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+
 -   Unmeasured Confounding
 -   Ex) One could recieve Tx when in Danger!
 -   Ex) What if it takes DM drugs to have effect 3M?
 
 ## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+
 ::: incremental
 -   HRT after Menopause
 -   What if we exclude early followup?
@@ -404,30 +519,118 @@ ft
 :::
 
 ## [Common observational study]{style="color:#FF6666;"}
--   _Current vs never(non) user analysis_
+
+-   *Current vs never(non) user analysis*
 -   Hadrd to adjust for measured confounders <br> that are affected by prior treatment
--   Ex) LDL in Statin~CHD
+-   Ex) LDL in Statin\~CHD
 
 ## [Common observational study]{style="color:#FF6666;"}
--   _Current vs never(non) user analysis_
-- A: Statin Assign
-- L: LDL
-- D: CHD
-- U: Poor diet
+
+-   *Current vs never(non) user analysis*
+-   A: Statin Assign
+-   L: LDL
+-   D: CHD
+-   U: Poor diet 
+
 <img src="img/dag.png"/>
 
 ## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
--   _Current vs never(non) user analysis_
+
+-   *Current vs never(non) user analysis*
 -   Unmeasured Confounding vs Selection Bias
 
 ## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+
 <img src="img/adhr.png"/>
 
+## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+-   Do people stick to single therapy?
+-   What about dynamic Strategy?
+-   Real world: Time-varying treatment
 
-# [Active Comparator New User Design]{style="color:navy;"}
+# [G-Methods]{style="color:navy;"}
 
-## [TTE:ACNU]{style="color:#FF6666;"}
-- How about A vs B?
+## [G-Methods]{style="color:#FF6666;"}
 
-## [TTE:ACNU]{style="color:#FF6666;"}
-<img src="img/acnu.png"/>
+<img src="img/dag2.png"/>
+
+## [G-Methods]{style="color:#FF6666;"}
+-   Methods that can handle treatment confounder feedback
+-   G-computation algorithm formula
+-   IP weighting
+-   Doubly-robust methods
+-   G-estimation
+
+## [G-Formula]{style="color:#FF6666;"}
+<img src="img/tree.png"/>
+
+## [G-Formula: Assumptions]{style="color:#FF6666;"}
+-   Conditional exchangeability
+-   Positivity
+-   Consistency: Observed outcome = potential outcome
+-   No interference: individual i의 outcome과 j의 tx는 독립
+-   High demensional data->Parametric Approach!
+
+## [G-Formula: Time-varying treatment]{style="color:#FF6666;"}
+<img src="img/ice.png"/>
+
+## [G-Formula: Time-varying treatment]{style="color:#FF6666;"}
+-   Main Question:
+-   What if no ICE?
+-   ICE probability should not be 1
+-   Ex) L1이 특정 값일 때 A1이 결정되는 경우!
+
+## [G-Formula: Time-varying treatment]{style="color:#FF6666;"}
+-   Main Question:
+-   What if no ICE?
+-   ICE probability should not be 1
+-   Ex) L1이 특정 값일 때 A1이 결정되는 경우!
+
+## [G-Formula: Time-varying treatment]{style="color:#FF6666;"}
+<img src="img/gfrom1.png"/>
+<img src="img/gfrom2.png"/>
+
+## [G-Formula: Time-varying treatment]{style="color:#FF6666;"}
+<img src="img/gfrom3.png"/>
+
+## [G-Formula: What if no ICE?]{style="color:#FF6666;"}
+-   a1 is fixed to 0!
+-   No need to consider how ICE effects Y
+
+## [G-Formula: What if no ICE?]{style="color:#FF6666;"}
+<img src="img/noice.png"/>
+
+
+## [G-Formula: Time-varying treatment]{style="color:#FF6666;"}
+<img src="img/gfrom4.png"/>
+
+## [G-Formula: Time-varying treatment]{style="color:#FF6666;"}
+<img src="img/gfrom5.png"/>
+
+## [G-Formula: Multiple ICE]{style="color:#FF6666;"}
+<img src="img/mulice.png"/>
+
+
+
+
+
+
+## [G-Formula: Double robustly estimation]{style="color:#FF6666;"}
+-   Combine IP weight and ICE g formula
+
+
+
+## [G-Formula: Double robustly estimation]{style="color:#FF6666;"}
+-   Step by time K
+-   Step1: Fit logistic regression to calculate Lk->IP weight
+-   Step2: 
+
+
+## [G-Formula: Dynamic strategy]{style="color:#FF6666;"}
+
+
+## [G-Formula: Missing data]{style="color:#FF6666;"}
+-   TBC
+
+## [G-Formula: Censoring]{style="color:#FF6666;"}
+-   TBC
