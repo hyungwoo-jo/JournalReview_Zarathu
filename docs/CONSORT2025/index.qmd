@@ -1,0 +1,149 @@
+---
+title: "CONSORT 2025: Key Updates"
+format:
+  revealjs:
+    theme: simple
+    transition: fade
+    slideNumber: true
+    widescreen: true
+---
+
+# [✨ New Items in CONSORT 2025]{style="color:navy;"}
+
+1. **Item 4:** Data Sharing  
+2. **Item 5b:** Authors’ Conflicts of Interest  
+3. **Item 8:** Patient and Public Involvement  
+4. **Item 12b:** Eligibility Criteria for Sites & Providers  
+5. **Item 15:** How Harms Were Assessed  
+6. **Item 21b,c:** Analysis Population & Missing Data  
+7. **Item 24a,b:** Actual Delivery of Intervention & Comparator
+
+---
+
+## [Item 4. Data Sharing]{style="color:#FF6666;"}
+
+- **What to share:**  
+  - De‐identified participant‐level dataset, data dictionary, analysis scripts  
+  - Intervention materials (manuals, videos)  
+- **Where/how:**  
+  - Public repository (OSF, Dryad) with URL/DOI  
+  - “Upon request” process (email + form)  
+- **If none planned:**  
+  - State “No data sharing planned due to …​”
+
+---
+
+## [Example: Item 4 – Data Sharing]{style="color:navy;"}
+
+> “The de‑identified participant‑level dataset, data dictionary, and R scripts are available at https://osf.io/abcd1234 (DOI: 10.1234/osf.io/abcd1234). Intervention manuals and video tutorials are archived at Dryad (DOI: 10.5678/dryad.xyz789).  
+>  
+> If you require additional materials, please email trialsupport@univ.edu with ‘Data Request’ in the subject.”
+
+---
+
+## [Item 5b. Authors’ Conflicts of Interest]{style="color:#FF6666;"}
+
+- **Financial COI:** grants, salary support, stock options, honoraria, patents  
+- **Non‑financial COI:** advisory board roles, advocacy group positions  
+- **Mitigation:** independent ethics oversight  
+- **If none:** “The authors declare no conflicts of interest.”
+
+---
+
+## [Example: Item 5b – Authors’ COI]{style="color:navy;"}
+
+> “Dr. A reports grant funding from PharmaCo; Dr. B holds consultancy fees from BioTechY and stock options in MedStart.  
+> Ms. C serves on the board of the Patient Advocacy Network.  
+> All COIs were reviewed by the institutional ethics committee.  
+> No additional conflicts to declare.”
+
+---
+
+## [Item 8. Patient & Public Involvement]{style="color:#FF6666;"}
+
+- **Design stage:** patient advisory panel reviewed protocol and consent forms  
+- **Conduct:** two patient reps on steering committee  
+- **Reporting:** draft manuscript circulated to public participants for feedback  
+- **If none:** “No patient or public involvement in this trial.”
+
+---
+
+## [Example: Item 8 – PPI]{style="color:navy;"}
+
+> “A panel of five patients with prior experience of the intervention helped refine the study endpoints and consent documents (design). Two patient representatives served as full members of the trial steering committee (conduct). A summary of the results was shared with the panel for comment prior to submission (reporting).”
+
+---
+
+## [Item 12b. Eligibility Criteria]{style="color:#FF6666;"}
+
+- **Sites:** minimum 50 procedures/year; accredited research unit  
+- **Providers:** board‐certified clinicians with ≥ 5 years’ experience; completed trial training
+
+---
+
+## [Example: Item 12b – Site & Provider Eligibility]{style="color:navy;"}
+
+> **Site eligibility:**  
+> – Must perform ≥ 50 knee replacement surgeries annually  
+> – On‑site ICU and research coordinator availability  
+>  
+> **Provider eligibility:**  
+> – Orthopedic surgeons with board certification and ≥ 5 years’ practice  
+> – Completion of the study’s standardized surgical training module
+
+---
+
+## [Item 15. Harms Assessment]{style="color:#FF6666;"}
+
+- **Active surveillance:**  
+  - Standardized questionnaire at weeks 4, 12; assessor blinded to allocation  
+- **Passive surveillance:**  
+  - EHR review; MedDRA coding; CTCAE v5 severity grading  
+- **Classification:** seriousness (life‑threatening vs. non‑serious), causality
+
+---
+
+## [Example: Item 15 – Harms]{style="color:navy;"}
+
+> **Active:**  
+> – Participants completed the CTCAE v5 adverse event form at 4 and 12 weeks; events adjudicated by blinded safety officer.  
+>  
+> **Passive:**  
+> – All hospital‐reported events extracted from EHR, coded per MedDRA, severity graded by independent coder.  
+>  
+> **Grouping:** serious vs. non‑serious; related vs. unrelated.
+
+---
+
+## [Item 21b,c. Analysis & Missing Data]{style="color:#FF6666;"}
+
+- **21b Analysis population:**  
+  - All randomized participants (intention‑to‑treat), analysed as randomized  
+- **21c Missing data:**  
+  - MAR assumption; multiple imputation (20 datasets); sensitivity analysis excluding imputed cases
+
+---
+
+## [Example: Item 21b,c – Missing Data]{style="color:navy;"}
+
+> “Primary analyses included all 200 randomized participants (ITT). Missing 3‑month outcomes (5%) were imputed under the MAR assumption via chained equations (20 imputations). Sensitivity analyses used complete‑case data only.”
+
+---
+
+## [Item 24a,b. Actual Delivery]{style="color:#FF6666;"}
+
+- **24a Delivery:**  
+  - Delivered by 6 physiotherapists (mean 8 yrs experience); 92% session adherence; fidelity audit ≥ 95%  
+- **24b Concomitant care:**  
+  - 30% of intervention arm received additional analgesics (mean 2 doses/person)
+
+---
+
+## [Example: Item 24a,b – Delivery & Concomitant Care]{style="color:navy;"}
+
+> **24a:** Six licensed physiotherapists (avg. 8 years’ experience) delivered the 12‑week exercise program; median adherence = 92%; random fidelity checks showed ≥ 95% protocol compliance.  
+>  
+> **24b:** In the intervention group, 30% of participants received rescue analgesics (mean 2 doses, SD 1.1) during the study.
+
+---
+

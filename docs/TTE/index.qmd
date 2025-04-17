@@ -33,7 +33,9 @@ grViz("
   }
 ")
 ```
+
 ## [Causal Inference]{style="color:#FF6666;"}
+
 | Name       | A   | Y   | Y<sub>A=0</sub> | Y<sub>A=1</sub> |
 |------------|-----|-----|-----------------|-----------------|
 | Rheia      | 0   | 0   | 0               | ?               |
@@ -56,9 +58,6 @@ grViz("
 | Hermes     | 1   | 0   | ?               | 0               |
 | Hebe       | 1   | 0   | ?               | 0               |
 | Dionysus   | 1   | 0   | ?               | 0               |
-
-
-
 
 ## [Causal Inference]{style="color:#FF6666;"}
 
@@ -530,7 +529,7 @@ ft
 -   A: Statin Assign
 -   L: LDL
 -   D: CHD
--   U: Poor diet 
+-   U: Poor diet
 
 <img src="img/dag.png"/>
 
@@ -544,6 +543,7 @@ ft
 <img src="img/adhr.png"/>
 
 ## [TTE: Multiple sequential trial]{style="color:#FF6666;"}
+
 -   Do people stick to single therapy?
 -   What about dynamic Strategy?
 -   Real world: Time-varying treatment
@@ -555,6 +555,7 @@ ft
 <img src="img/dag2.png"/>
 
 ## [G-Methods]{style="color:#FF6666;"}
+
 -   Methods that can handle treatment confounder feedback
 -   G-computation algorithm formula
 -   IP weighting
@@ -562,75 +563,80 @@ ft
 -   G-estimation
 
 ## [G-Formula]{style="color:#FF6666;"}
+
 <img src="img/tree.png"/>
 
 ## [G-Formula: Assumptions]{style="color:#FF6666;"}
+
 -   Conditional exchangeability
 -   Positivity
 -   Consistency: Observed outcome = potential outcome
 -   No interference: individual i의 outcome과 j의 tx는 독립
--   High demensional data->Parametric Approach!
+-   High demensional data-\>Parametric Approach!
 
 ## [G-Formula: Time-varying treatment]{style="color:#FF6666;"}
+
 <img src="img/ice.png"/>
 
 ## [G-Formula: Time-varying treatment]{style="color:#FF6666;"}
+
 -   Main Question:
 -   What if no ICE?
 -   ICE probability should not be 1
 -   Ex) L1이 특정 값일 때 A1이 결정되는 경우!
 
 ## [G-Formula: Time-varying treatment]{style="color:#FF6666;"}
+
 -   Main Question:
 -   What if no ICE?
 -   ICE probability should not be 1
 -   Ex) L1이 특정 값일 때 A1이 결정되는 경우!
 
 ## [G-Formula: Time-varying treatment]{style="color:#FF6666;"}
-<img src="img/gfrom1.png"/>
-<img src="img/gfrom2.png"/>
+
+<img src="img/gfrom1.png"/> <img src="img/gfrom2.png"/>
 
 ## [G-Formula: Time-varying treatment]{style="color:#FF6666;"}
+
 <img src="img/gfrom3.png"/>
 
 ## [G-Formula: What if no ICE?]{style="color:#FF6666;"}
+
 -   a1 is fixed to 0!
 -   No need to consider how ICE effects Y
 
 ## [G-Formula: What if no ICE?]{style="color:#FF6666;"}
+
 <img src="img/noice.png"/>
 
-
 ## [G-Formula: Time-varying treatment]{style="color:#FF6666;"}
+
 <img src="img/gfrom4.png"/>
 
 ## [G-Formula: Time-varying treatment]{style="color:#FF6666;"}
+
 <img src="img/gfrom5.png"/>
 
 ## [G-Formula: Multiple ICE]{style="color:#FF6666;"}
+
 <img src="img/mulice.png"/>
 
-
-
-
-
-
 ## [G-Formula: Double robustly estimation]{style="color:#FF6666;"}
+
 -   Combine IP weight and ICE g formula
 
-
-
 ## [G-Formula: Double robustly estimation]{style="color:#FF6666;"}
--   Step by time K
--   Step1: Fit logistic regression to calculate Lk->IP weight
--   Step2: 
 
+-   Step by time K
+-   Step1: Fit logistic regression to calculate Lk-\>IP weight
+-   Step2:
 
 ## [G-Formula: Dynamic strategy]{style="color:#FF6666;"}
 
-
 ## [G-Formula: Missing data]{style="color:#FF6666;"}
+
 -   TBC
 
 ## [G-Formula: Censoring]{style="color:#FF6666;"}
+
 -   TBC
